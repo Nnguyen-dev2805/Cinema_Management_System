@@ -127,6 +127,7 @@
             this.CustomerManage_Btn.TabIndex = 5;
             this.CustomerManage_Btn.Text = "Quản Lý Khách Hàng";
             this.CustomerManage_Btn.UseVisualStyleBackColor = true;
+            this.CustomerManage_Btn.Click += new System.EventHandler(this.CustomerManage_Btn_Click);
             // 
             // StaffManage_Btn
             // 
@@ -148,6 +149,7 @@
             this.ShowTimeManage_Btn.TabIndex = 3;
             this.ShowTimeManage_Btn.Text = "Quản Lý Suất Chiếu";
             this.ShowTimeManage_Btn.UseVisualStyleBackColor = true;
+            this.ShowTimeManage_Btn.Click += new System.EventHandler(this.ShowTimeManage_Btn_Click);
             // 
             // MovieManage_Btn
             // 

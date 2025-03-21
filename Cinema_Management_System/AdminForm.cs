@@ -38,5 +38,16 @@ namespace Cinema_Management_System
         {
 
         }
+
+        private void CustomerManage_Btn_Click(object sender, EventArgs e)
+        {
+            account_Form1.Hide();
+            staffManageForm1.Show();
+        }
+
+        private void ShowTimeManage_Btn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
