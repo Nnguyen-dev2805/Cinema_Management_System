@@ -5,12 +5,16 @@ using System.Data;
 using System.Drawing;
 using System.IO.Packaging;
 using System.Linq;
+using System.Net.Mail;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using Cinema_Management_System.Views.MessageBox;
 using ClosedXML.Excel;
+using System.IO;
+
 
 namespace Cinema_Management_System.Views.Statistics
 {
@@ -20,20 +24,36 @@ namespace Cinema_Management_System.Views.Statistics
         {
             InitializeComponent();
             guna2TabControl1.SelectedIndex = 2;
-            //VeCotkep_Tongquat();
+            //VeBieuDo_Tongquat();
             Tungay_label.Visible = false;
             Denngay_label.Visible = false;
             startDay_date.Visible = false;
             endDay_date.Visible = false; 
             startDay_date.MaxDate = DateTime.Now;
             endDay_date.MaxDate = DateTime.Now;
+
+
+            // Thiết lập Timer để kiểm tra hàng ngày
+            //System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
+            //timer.Interval = 24 * 60 * 60 * 1000; // 24 giờ
+            //timer.Tick += (s, e) =>
+            //{
+            //    // Kiểm tra nếu là ngày đầu tiên của tháng
+            //    if (DateTime.Now.Day == 1)
+            //    {
+            //        // Gửi báo cáo cho tháng trước
+            //        DateTime lastMonth = DateTime.Now.AddMonths(-1);
+            //        SendMonthlyStatisticsEmail(lastMonth.Year, lastMonth.Month, "recipient@example.com");
+            //    }
+            //};
+            //timer.Start();
         }
 
 
 
 
 
-        private void VeCotkep_Tongquat(DateTime startDate, DateTime endDate)
+        private void VeBieuDo_Tongquat(DateTime startDate, DateTime endDate)
         {
             var db = new ConnectDataContext();
 
@@ -56,8 +76,10 @@ namespace Cinema_Management_System.Views.Statistics
                 .Where(x => x.BillDate.Date >= startDate && x.BillDate.Date <= endDate)
                 .Sum(x => (decimal?)x.Total) ?? 0;
 
+            decimal totalCost_Salary = 10000000;
+
             decimal totalRevenue = totalRevenue_Product + totalRevenue_Ticket;
-            decimal totalCost = totalCost_Product + totalCost_Ticket;
+            decimal totalCost = totalCost_Product + totalCost_Ticket  + totalCost_Salary;
 
 
             tongdoanhthu_label.Text = $"{totalRevenue.ToString("N0")} VNĐ";
@@ -180,6 +202,14 @@ namespace Cinema_Management_System.Views.Statistics
                     seriesCostPie.Points[pointIndex].Label = $"{(totalCost_Ticket / totalCost * 100):0.##}%";
                     seriesCostPie.Points[pointIndex].LegendText = "Vé xem phim ";
                 }
+                if (totalCost_Salary > 0)
+                {
+                    int pointIndex = seriesCostPie.Points.AddXY("Lương Nhân viên", totalCost_Ticket);
+                    seriesCostPie.Points[pointIndex].Color = Color.FromArgb(255, 255, 65);
+                    seriesCostPie.Points[pointIndex].Label = $"{(totalCost_Salary / totalCost * 100):0.##}%";
+                    seriesCostPie.Points[pointIndex].LegendText = "Nhân Viên";
+                } 
+                    
             }
 
             CPTQ_piechart.Series.Add(seriesCostPie);
@@ -282,14 +312,14 @@ namespace Cinema_Management_System.Views.Statistics
             }
 
             // Gọi hàm vẽ biểu đồ với ngày bắt đầu và kết thúc
-            VeCotkep_Tongquat(startDate, endDate);
+            VeBieuDo_Tongquat(startDate, endDate);
         }
 
         private void startDay_date_ValueChanged(object sender, EventArgs e)
         {
             if (startDay_date.Visible && endDay_date.Visible)
             {
-                VeCotkep_Tongquat(startDay_date.Value, endDay_date.Value);
+                VeBieuDo_Tongquat(startDay_date.Value, endDay_date.Value);
             }
         }
 
@@ -297,7 +327,7 @@ namespace Cinema_Management_System.Views.Statistics
         {
             if (startDay_date.Visible && endDay_date.Visible)
             {
-                VeCotkep_Tongquat(startDay_date.Value, endDay_date.Value);
+                VeBieuDo_Tongquat(startDay_date.Value, endDay_date.Value);
             }
         }
 
@@ -341,25 +371,22 @@ namespace Cinema_Management_System.Views.Statistics
             }
 
             // Gọi lại phương thức vẽ biểu đồ
-            VeCotkep_Tongquat(startDate, endDate);
+            VeBieuDo_Tongquat(startDate, endDate);
         }
 
         private void xuatExcel_bnt_Click(object sender, EventArgs e)
         {
             try
             {
-                // Xác định khoảng thời gian
                 DateTime startDate, endDate;
 
                 if (startDay_date.Visible && endDay_date.Visible)
                 {
-                    // Sử dụng DateTimePicker
                     startDate = startDay_date.Value;
                     endDate = endDay_date.Value;
                 }
                 else
                 {
-                    // Sử dụng ComboBox
                     string selectedPeriod = chuki_cbb.SelectedItem?.ToString();
                     string selectedItem = thoidiem_cbb.SelectedItem?.ToString();
 
@@ -385,123 +412,165 @@ namespace Cinema_Management_System.Views.Statistics
                     }
                 }
 
-                // Tính toán dữ liệu (tương tự VeCotkep_Tongquat)
-                var db = new ConnectDataContext();
-
-                startDate = startDate.Date;
-                endDate = endDate.Date;
-
-                decimal totalRevenue_Product = db.Bill_SellProducts
-                    .Where(bdp => bdp.BillDate.Date >= startDate && bdp.BillDate.Date <= endDate)
-                    .Sum(bdp => (decimal?)bdp.TotalAmount) ?? 0;
-                decimal totalRevenue_Ticket = db.Bills
-                    .Where(x => x.BillDate.Date >= startDate && x.BillDate.Date <= endDate)
-                    .Sum(x => (decimal?)x.Total) ?? 0;
-                decimal totalCost_Product = (db.Bill_ImportProducts
-                    .Where(bip => bip.BillDate.Date >= startDate && bip.BillDate.Date <= endDate)
-                    .Sum(bip => (decimal?)bip.Total) ?? 0) +
-                    (db.Bill_AddProducts
-                    .Where(x => x.BillDate.Date >= startDate && x.BillDate.Date <= endDate)
-                    .Sum(x => (decimal?)x.Total) ?? 0);
-                decimal totalCost_Ticket = db.Bill_AddMovies
-                    .Where(x => x.BillDate.Date >= startDate && x.BillDate.Date <= endDate)
-                    .Sum(x => (decimal?)x.Total) ?? 0;
-
-                decimal totalRevenue = totalRevenue_Product + totalRevenue_Ticket;
-                decimal totalCost = totalCost_Product + totalCost_Ticket;
-
-                // Tạo file Excel
-                using (var workbook = new XLWorkbook())
+                SaveFileDialog saveFileDialog = new SaveFileDialog
                 {
-                    var worksheet = workbook.Worksheets.Add("Thống kê");
+                    Filter = "Excel files (*.xlsx)|*.xlsx|Tất cả file (*.*)|*.*",
+                    FileName = $"ThongKe_{startDate:yyyyMMdd}_{endDate:yyyyMMdd}.xlsx"
+                };
 
-                    // Thiết lập tiêu đề
-                    worksheet.Cell(1, 1).Value = "BÁO CÁO THỐNG KÊ DOANH THU VÀ CHI PHÍ";
-                    worksheet.Range("A1:D1").Merge();
-                    worksheet.Cell(1, 1).Style.Font.Bold = true;
-                    worksheet.Cell(1, 1).Style.Font.FontSize = 14;
-                    worksheet.Cell(1, 1).Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
-
-                    // Thiết lập khoảng thời gian
-                    worksheet.Cell(2, 1).Value = $"Từ ngày: {startDate:dd/MM/yyyy} - Đến ngày: {endDate:dd/MM/yyyy}";
-                    worksheet.Range("A2:D2").Merge();
-                    worksheet.Cell(2, 1).Style.Font.Italic = true;
-                    worksheet.Cell(2, 1).Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
-
-                    // Thiết lập tiêu đề cột
-                    worksheet.Cell(4, 1).Value = "Danh mục";
-                    worksheet.Cell(4, 2).Value = "Doanh thu (VNĐ)";
-                    worksheet.Cell(4, 3).Value = "Chi phí (VNĐ)";
-                    worksheet.Cell(4, 4).Value = "Tỷ lệ (%)";
-                    var headerRange = worksheet.Range("A4:D4");
-                    headerRange.Style.Font.Bold = true;
-                    headerRange.Style.Fill.BackgroundColor = XLColor.LightGray;
-
-                    // Thêm dữ liệu
-                    // Tổng doanh thu
-                    worksheet.Cell(5, 1).Value = "Tổng doanh thu";
-                    worksheet.Cell(5, 2).Value = totalRevenue;
-                    worksheet.Cell(5, 2).Style.NumberFormat.Format = "#,##0";
-                    worksheet.Cell(5, 4).Value = 100;
-                    worksheet.Cell(5, 4).Style.NumberFormat.Format = "0.00";
-
-                    // Doanh thu sản phẩm
-                    worksheet.Cell(6, 1).Value = "Doanh thu sản phẩm";
-                    worksheet.Cell(6, 2).Value = totalRevenue_Product;
-                    worksheet.Cell(6, 2).Style.NumberFormat.Format = "#,##0";
-                    worksheet.Cell(6, 4).Value = totalRevenue > 0 ? (totalRevenue_Product / totalRevenue * 100) : 0;
-                    worksheet.Cell(6, 4).Style.NumberFormat.Format = "0.00";
-
-                    // Doanh thu vé
-                    worksheet.Cell(7, 1).Value = "Doanh thu vé xem phim";
-                    worksheet.Cell(7, 2).Value = totalRevenue_Ticket;
-                    worksheet.Cell(7, 2).Style.NumberFormat.Format = "#,##0";
-                    worksheet.Cell(7, 4).Value = totalRevenue > 0 ? (totalRevenue_Ticket / totalRevenue * 100) : 0;
-                    worksheet.Cell(7, 4).Style.NumberFormat.Format = "0.00";
-
-                    // Tổng chi phí
-                    worksheet.Cell(8, 1).Value = "Tổng chi phí";
-                    worksheet.Cell(8, 3).Value = totalCost;
-                    worksheet.Cell(8, 3).Style.NumberFormat.Format = "#,##0";
-                    worksheet.Cell(8, 4).Value = 100;
-                    worksheet.Cell(8, 4).Style.NumberFormat.Format = "0.00";
-
-                    // Chi phí sản phẩm
-                    worksheet.Cell(9, 1).Value = "Chi phí sản phẩm";
-                    worksheet.Cell(9, 3).Value = totalCost_Product;
-                    worksheet.Cell(9, 3).Style.NumberFormat.Format = "#,##0";
-                    worksheet.Cell(9, 4).Value = totalCost > 0 ? (totalCost_Product / totalCost * 100) : 0;
-                    worksheet.Cell(9, 4).Style.NumberFormat.Format = "0.00";
-
-                    // Chi phí vé
-                    worksheet.Cell(10, 1).Value = "Chi phí vé xem phim";
-                    worksheet.Cell(10, 3).Value = totalCost_Ticket;
-                    worksheet.Cell(10, 3).Style.NumberFormat.Format = "#,##0";
-                    worksheet.Cell(10, 4).Value = totalCost > 0 ? (totalCost_Ticket / totalCost * 100) : 0;
-                    worksheet.Cell(10, 4).Style.NumberFormat.Format = "0.00";
-
-                    // Tự động điều chỉnh kích thước cột
-                    worksheet.Columns(1, 4).AdjustToContents();
-
-                    // Lưu file
-                    SaveFileDialog saveFileDialog = new SaveFileDialog
-                    {
-                        Filter = "Excel files (*.xlsx)|*.xlsx|Tất cả file (*.*)|*.*",
-                        FileName = $"ThongKe_{startDate:yyyyMMdd}_{endDate:yyyyMMdd}.xlsx"
-                    };
-
-                    if (saveFileDialog.ShowDialog() == DialogResult.OK)
-                    {
-                        workbook.SaveAs(saveFileDialog.FileName);
-                        MessageBoxHelper.ShowSuccess("Thành công", "Xuất file Excel thành công!");
-                    }
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    GenerateExcelReport(startDate, endDate, saveFileDialog.FileName);
+                    MessageBoxHelper.ShowSuccess("Thành công", "Xuất file Excel thành công!");
                 }
             }
             catch (Exception ex)
             {
-                MessageBoxHelper.ShowError("Lỗi", $"Đã xảy ra lỗi khi xuất file Excel: {ex.Message}");
+                MessageBoxHelper.ShowError("Lỗi", $"Đã xảy ra lỗi khi xuất file Excel");
             }
 
         }
+
+
+        private void GenerateExcelReport(DateTime startDate, DateTime endDate, string filePath)
+        {
+            var db = new ConnectDataContext();
+
+            startDate = startDate.Date;
+            endDate = endDate.Date;
+
+            decimal totalRevenue_Product = db.Bill_SellProducts
+                .Where(bdp => bdp.BillDate.Date >= startDate && bdp.BillDate.Date <= endDate)
+                .Sum(bdp => (decimal?)bdp.TotalAmount) ?? 0;
+            decimal totalRevenue_Ticket = db.Bills
+                .Where(x => x.BillDate.Date >= startDate && x.BillDate.Date <= endDate)
+                .Sum(x => (decimal?)x.Total) ?? 0;
+            decimal totalCost_Product = (db.Bill_ImportProducts
+                .Where(bip => bip.BillDate.Date >= startDate && bip.BillDate.Date <= endDate)
+                .Sum(bip => (decimal?)bip.Total) ?? 0) +
+                (db.Bill_AddProducts
+                .Where(x => x.BillDate.Date >= startDate && x.BillDate.Date <= endDate)
+                .Sum(x => (decimal?)x.Total) ?? 0);
+            decimal totalCost_Ticket = db.Bill_AddMovies
+                .Where(x => x.BillDate.Date >= startDate && x.BillDate.Date <= endDate)
+                .Sum(x => (decimal?)x.Total) ?? 0;
+
+            decimal totalRevenue = totalRevenue_Product + totalRevenue_Ticket;
+            decimal totalCost = totalCost_Product + totalCost_Ticket;
+
+            using (var workbook = new XLWorkbook())
+            {
+                var worksheet = workbook.Worksheets.Add("Thống kê");
+
+                worksheet.Cell(1, 1).Value = "BÁO CÁO THỐNG KẾ DOANH THU VÀ CHI PHÍ";
+                worksheet.Range("A1:D1").Merge();
+                worksheet.Cell(1, 1).Style.Font.Bold = true;
+                worksheet.Cell(1, 1).Style.Font.FontSize = 14;
+                worksheet.Cell(1, 1).Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
+
+                worksheet.Cell(2, 1).Value = $"Từ ngày: {startDate:dd/MM/yyyy} - Đến ngày: {endDate:dd/MM/yyyy}";
+                worksheet.Range("A2:D2").Merge();
+                worksheet.Cell(2, 1).Style.Font.Italic = true;
+                worksheet.Cell(2, 1).Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
+
+                worksheet.Cell(4, 1).Value = "Danh mục";
+                worksheet.Cell(4, 2).Value = "Doanh thu (VNĐ)";
+                worksheet.Cell(4, 3).Value = "Chi phí (VNĐ)";
+                worksheet.Cell(4, 4).Value = "Tỷ lệ (%)";
+                var headerRange = worksheet.Range("A4:D4");
+                headerRange.Style.Font.Bold = true;
+                headerRange.Style.Fill.BackgroundColor = XLColor.LightGray;
+
+                worksheet.Cell(5, 1).Value = "Tổng doanh thu";
+                worksheet.Cell(5, 2).Value = totalRevenue;
+                worksheet.Cell(5, 2).Style.NumberFormat.Format = "#,##0";
+                worksheet.Cell(5, 4).Value = 100;
+                worksheet.Cell(5, 4).Style.NumberFormat.Format = "0.00";
+
+                worksheet.Cell(6, 1).Value = "Doanh thu sản phẩm";
+                worksheet.Cell(6, 2).Value = totalRevenue_Product;
+                worksheet.Cell(6, 2).Style.NumberFormat.Format = "#,##0";
+                worksheet.Cell(6, 4).Value = totalRevenue > 0 ? (totalRevenue_Product / totalRevenue * 100) : 0;
+                worksheet.Cell(6, 4).Style.NumberFormat.Format = "0.00";
+
+                worksheet.Cell(7, 1).Value = "Doanh thu vé xem phim";
+                worksheet.Cell(7, 2).Value = totalRevenue_Ticket;
+                worksheet.Cell(7, 2).Style.NumberFormat.Format = "#,##0";
+                worksheet.Cell(7, 4).Value = totalRevenue > 0 ? (totalRevenue_Ticket / totalRevenue * 100) : 0;
+                worksheet.Cell(7, 4).Style.NumberFormat.Format = "0.00";
+
+                worksheet.Cell(8, 1).Value = "Tổng chi phí";
+                worksheet.Cell(8, 3).Value = totalCost;
+                worksheet.Cell(8, 3).Style.NumberFormat.Format = "#,##0";
+                worksheet.Cell(8, 4).Value = 100;
+                worksheet.Cell(8, 4).Style.NumberFormat.Format = "0.00";
+
+                worksheet.Cell(9, 1).Value = "Chi phí sản phẩm";
+                worksheet.Cell(9, 3).Value = totalCost_Product;
+                worksheet.Cell(9, 3).Style.NumberFormat.Format = "#,##0";
+                worksheet.Cell(9, 4).Value = totalCost > 0 ? (totalCost_Product / totalCost * 100) : 0;
+                worksheet.Cell(9, 4).Style.NumberFormat.Format = "0.00";
+
+                worksheet.Cell(10, 1).Value = "Chi phí vé xem phim";
+                worksheet.Cell(10, 3).Value = totalCost_Ticket;
+                worksheet.Cell(10, 3).Style.NumberFormat.Format = "#,##0";
+                worksheet.Cell(10, 4).Value = totalCost > 0 ? (totalCost_Ticket / totalCost * 100) : 0;
+                worksheet.Cell(10, 4).Style.NumberFormat.Format = "0.00";
+
+                worksheet.Columns(1, 4).AdjustToContents();
+
+                workbook.SaveAs(filePath);
+            }
+        }
+
+//        private void SendMonthlyStatisticsEmail(int year, int month, string toEmail)
+//        {
+//            try
+//            {
+//                // Xác định khoảng thời gian cho tháng cần gửi
+//                DateTime startDate = new DateTime(year, month, 1);
+//        DateTime endDate = startDate.AddMonths(1).AddDays(-1);
+
+//        // Tạo file Excel tạm thời
+//        string tempFilePath = Path.Combine(Path.GetTempPath(), $"ThongKe_Thang_{month}_{year}.xlsx");
+//        GenerateExcelReport(startDate, endDate, tempFilePath);
+
+//        // Thiết lập thông tin email
+//        string fromEmail = "your-email@gmail.com"; // Thay bằng email của bạn
+//        string fromPassword = "your-app-password"; // Thay bằng app password của bạn
+//        string subject = $"Báo cáo thống kê tháng {month}/{year}";
+//        string body = $"Kính gửi,\n\nĐính kèm là báo cáo thống kê doanh thu và chi phí tháng {month}/{year}.\n\nTrân trọng,\nHệ thống quản lý rạp chiếu phim";
+
+//                // Tạo đối tượng MailMessage
+//                using (MailMessage mail = new MailMessage())
+//                {
+//                    mail.From = new MailAddress(fromEmail);
+//                    mail.To.Add(toEmail);
+//                    mail.Subject = subject;
+//                    mail.Body = body;
+//                    mail.Attachments.Add(new Attachment(tempFilePath));
+
+//                    // Thiết lập SMTP client (dùng Gmail làm ví dụ)
+//                    using (SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587))
+//                    {
+//                        smtp.Credentials = new NetworkCredential(fromEmail, fromPassword);
+//                        smtp.EnableSsl = true;
+//                        smtp.Send(mail);
+//                    }
+//                }
+
+//                // Xóa file tạm sau khi gửi
+//                if (File.Exists(tempFilePath))
+//                  {
+//                  File.Delete(tempFilePath);
+//                  }
+
+//              MessageBoxHelper.ShowSuccess("Thành công", "Email báo cáo thống kê đã được gửi!");
+//                  }
+//            catch (Exception ex)
+//            {
+//                MessageBoxHelper.ShowError("Lỗi", $"Đã xảy ra lỗi khi gửi email: {ex.Message}");
+//            }
+//        }
     }
 }
