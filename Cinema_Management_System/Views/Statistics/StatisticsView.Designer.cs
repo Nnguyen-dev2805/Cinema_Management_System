@@ -29,33 +29,33 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea11 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend11 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea12 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend12 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea13 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend13 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series13 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea14 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend14 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series14 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea15 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend15 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series15 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea16 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend16 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series16 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea17 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend17 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series17 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea18 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend18 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series18 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -267,20 +267,20 @@
             // 
             // bar_chart_TQ
             // 
-            chartArea1.BackColor = System.Drawing.Color.White;
-            chartArea1.Name = "ChartArea1";
-            this.bar_chart_TQ.ChartAreas.Add(chartArea1);
+            chartArea11.BackColor = System.Drawing.Color.White;
+            chartArea11.Name = "ChartArea1";
+            this.bar_chart_TQ.ChartAreas.Add(chartArea11);
             this.bar_chart_TQ.Dock = System.Windows.Forms.DockStyle.Bottom;
-            legend1.Name = "Legend1";
-            this.bar_chart_TQ.Legends.Add(legend1);
+            legend11.Name = "Legend1";
+            this.bar_chart_TQ.Legends.Add(legend11);
             this.bar_chart_TQ.Location = new System.Drawing.Point(0, 261);
             this.bar_chart_TQ.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.bar_chart_TQ.Name = "bar_chart_TQ";
-            series1.ChartArea = "ChartArea1";
-            series1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.bar_chart_TQ.Series.Add(series1);
+            series11.ChartArea = "ChartArea1";
+            series11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series11.Legend = "Legend1";
+            series11.Name = "Series1";
+            this.bar_chart_TQ.Series.Add(series11);
             this.bar_chart_TQ.Size = new System.Drawing.Size(911, 477);
             this.bar_chart_TQ.TabIndex = 7;
             this.bar_chart_TQ.Text = "Biểu đồ";
@@ -305,7 +305,7 @@
             this.label13.Location = new System.Drawing.Point(231, 12);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(51, 25);
+            this.label13.Size = new System.Drawing.Size(64, 32);
             this.label13.TabIndex = 3;
             this.label13.Text = "VNĐ";
             // 
@@ -316,7 +316,7 @@
             this.tongchiphi_label.Location = new System.Drawing.Point(4, 12);
             this.tongchiphi_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.tongchiphi_label.Name = "tongchiphi_label";
-            this.tongchiphi_label.Size = new System.Drawing.Size(61, 21);
+            this.tongchiphi_label.Size = new System.Drawing.Size(76, 28);
             this.tongchiphi_label.TabIndex = 3;
             this.tongchiphi_label.Text = "label14";
             // 
@@ -340,7 +340,7 @@
             this.label2.Location = new System.Drawing.Point(231, 12);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 25);
+            this.label2.Size = new System.Drawing.Size(64, 32);
             this.label2.TabIndex = 3;
             this.label2.Text = "VNĐ";
             // 
@@ -351,7 +351,7 @@
             this.tongdoanhthu1_label.Location = new System.Drawing.Point(4, 12);
             this.tongdoanhthu1_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.tongdoanhthu1_label.Name = "tongdoanhthu1_label";
-            this.tongdoanhthu1_label.Size = new System.Drawing.Size(61, 21);
+            this.tongdoanhthu1_label.Size = new System.Drawing.Size(76, 28);
             this.tongdoanhthu1_label.TabIndex = 3;
             this.tongdoanhthu1_label.Text = "label16";
             // 
@@ -362,7 +362,7 @@
             this.label17.Location = new System.Drawing.Point(485, 174);
             this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(104, 21);
+            this.label17.Size = new System.Drawing.Size(132, 28);
             this.label17.TabIndex = 4;
             this.label17.Text = "Tổng chi phí ";
             // 
@@ -373,7 +373,7 @@
             this.label18.Location = new System.Drawing.Point(98, 174);
             this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(126, 21);
+            this.label18.Size = new System.Drawing.Size(160, 28);
             this.label18.TabIndex = 1;
             this.label18.Text = "Tổng doanh thu";
             // 
@@ -452,7 +452,7 @@
             this.thoidiem_label.Location = new System.Drawing.Point(410, 41);
             this.thoidiem_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.thoidiem_label.Name = "thoidiem_label";
-            this.thoidiem_label.Size = new System.Drawing.Size(130, 21);
+            this.thoidiem_label.Size = new System.Drawing.Size(165, 28);
             this.thoidiem_label.TabIndex = 8;
             this.thoidiem_label.Text = "Chọn thời điểm :";
             // 
@@ -482,7 +482,7 @@
             this.label31.Location = new System.Drawing.Point(56, 41);
             this.label31.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(102, 21);
+            this.label31.Size = new System.Drawing.Size(132, 28);
             this.label31.TabIndex = 6;
             this.label31.Text = "Chọn chu kì :";
             // 
@@ -500,6 +500,7 @@
             this.chuki_cbb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.chuki_cbb.ItemHeight = 30;
             this.chuki_cbb.Items.AddRange(new object[] {
+            "Toàn bộ",
             "Theo tháng",
             "Theo năm",
             "Tùy chỉnh"});
@@ -518,7 +519,7 @@
             this.endDay_date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.endDay_date.Location = new System.Drawing.Point(399, 103);
             this.endDay_date.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.endDay_date.MaxDate = new System.DateTime(2025, 4, 29, 23, 3, 25, 0);
+            this.endDay_date.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.endDay_date.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.endDay_date.Name = "endDay_date";
             this.endDay_date.Size = new System.Drawing.Size(214, 38);
@@ -532,7 +533,7 @@
             this.Denngay_label.Location = new System.Drawing.Point(395, 76);
             this.Denngay_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Denngay_label.Name = "Denngay_label";
-            this.Denngay_label.Size = new System.Drawing.Size(90, 21);
+            this.Denngay_label.Size = new System.Drawing.Size(116, 28);
             this.Denngay_label.TabIndex = 3;
             this.Denngay_label.Text = "Đến ngày : ";
             // 
@@ -559,7 +560,7 @@
             this.Tungay_label.Location = new System.Drawing.Point(395, 4);
             this.Tungay_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Tungay_label.Name = "Tungay_label";
-            this.Tungay_label.Size = new System.Drawing.Size(80, 21);
+            this.Tungay_label.Size = new System.Drawing.Size(102, 28);
             this.Tungay_label.TabIndex = 1;
             this.Tungay_label.Text = "Từ ngày : ";
             // 
@@ -577,20 +578,20 @@
             // CPTQ_piechart
             // 
             this.CPTQ_piechart.BorderlineColor = System.Drawing.Color.Firebrick;
-            chartArea2.BackColor = System.Drawing.Color.White;
-            chartArea2.Name = "ChartArea1";
-            this.CPTQ_piechart.ChartAreas.Add(chartArea2);
+            chartArea12.BackColor = System.Drawing.Color.White;
+            chartArea12.Name = "ChartArea1";
+            this.CPTQ_piechart.ChartAreas.Add(chartArea12);
             this.CPTQ_piechart.Dock = System.Windows.Forms.DockStyle.Bottom;
-            legend2.Name = "Legend1";
-            this.CPTQ_piechart.Legends.Add(legend2);
+            legend12.Name = "Legend1";
+            this.CPTQ_piechart.Legends.Add(legend12);
             this.CPTQ_piechart.Location = new System.Drawing.Point(0, 55);
             this.CPTQ_piechart.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.CPTQ_piechart.Name = "CPTQ_piechart";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.CPTQ_piechart.Series.Add(series2);
+            series12.ChartArea = "ChartArea1";
+            series12.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series12.Legend = "Legend1";
+            series12.Name = "Series1";
+            this.CPTQ_piechart.Series.Add(series12);
             this.CPTQ_piechart.Size = new System.Drawing.Size(382, 304);
             this.CPTQ_piechart.TabIndex = 2;
             this.CPTQ_piechart.Text = "chart4";
@@ -604,7 +605,7 @@
             this.label11.Location = new System.Drawing.Point(4, 9);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(147, 30);
+            this.label11.Size = new System.Drawing.Size(190, 37);
             this.label11.TabIndex = 1;
             this.label11.Text = "Cơ cấu chi phí";
             this.label11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -623,37 +624,37 @@
             // DTTQ_piechart
             // 
             this.DTTQ_piechart.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.DashDotDot;
-            chartArea3.BackColor = System.Drawing.Color.White;
-            chartArea3.BackSecondaryColor = System.Drawing.Color.White;
-            chartArea3.Name = "ChartArea1";
-            this.DTTQ_piechart.ChartAreas.Add(chartArea3);
+            chartArea13.BackColor = System.Drawing.Color.White;
+            chartArea13.BackSecondaryColor = System.Drawing.Color.White;
+            chartArea13.Name = "ChartArea1";
+            this.DTTQ_piechart.ChartAreas.Add(chartArea13);
             this.DTTQ_piechart.Dock = System.Windows.Forms.DockStyle.Bottom;
-            legend3.Name = "Legend1";
-            this.DTTQ_piechart.Legends.Add(legend3);
+            legend13.Name = "Legend1";
+            this.DTTQ_piechart.Legends.Add(legend13);
             this.DTTQ_piechart.Location = new System.Drawing.Point(0, 59);
             this.DTTQ_piechart.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.DTTQ_piechart.Name = "DTTQ_piechart";
             this.DTTQ_piechart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series3.BackImageTransparentColor = System.Drawing.Color.RosyBrown;
-            series3.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            series3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series3.Color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            series3.CustomProperties = "PieLineColor=192\\, 0\\, 0, CollectedColor=Teal";
-            series3.LabelBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            series3.LabelBorderColor = System.Drawing.Color.Cyan;
-            series3.LabelForeColor = System.Drawing.Color.Silver;
-            series3.Legend = "Legend1";
-            series3.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            series3.MarkerColor = System.Drawing.Color.Lime;
-            series3.MarkerImageTransparentColor = System.Drawing.Color.Yellow;
-            series3.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Diamond;
-            series3.Name = "Series1";
-            series3.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series3.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            series3.SmartLabelStyle.CalloutBackColor = System.Drawing.Color.DimGray;
-            this.DTTQ_piechart.Series.Add(series3);
+            series13.BackImageTransparentColor = System.Drawing.Color.RosyBrown;
+            series13.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            series13.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            series13.ChartArea = "ChartArea1";
+            series13.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series13.Color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            series13.CustomProperties = "PieLineColor=192\\, 0\\, 0, CollectedColor=Teal";
+            series13.LabelBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            series13.LabelBorderColor = System.Drawing.Color.Cyan;
+            series13.LabelForeColor = System.Drawing.Color.Silver;
+            series13.Legend = "Legend1";
+            series13.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            series13.MarkerColor = System.Drawing.Color.Lime;
+            series13.MarkerImageTransparentColor = System.Drawing.Color.Yellow;
+            series13.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Diamond;
+            series13.Name = "Series1";
+            series13.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
+            series13.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            series13.SmartLabelStyle.CalloutBackColor = System.Drawing.Color.DimGray;
+            this.DTTQ_piechart.Series.Add(series13);
             this.DTTQ_piechart.Size = new System.Drawing.Size(383, 317);
             this.DTTQ_piechart.TabIndex = 1;
             this.DTTQ_piechart.Text = "chart5";
@@ -667,7 +668,7 @@
             this.label12.Location = new System.Drawing.Point(4, 3);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(183, 30);
+            this.label12.Size = new System.Drawing.Size(235, 37);
             this.label12.TabIndex = 0;
             this.label12.Text = "Cơ cấu doanh thu";
             this.label12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -703,20 +704,20 @@
             // chart_ChiPhi
             // 
             this.chart_ChiPhi.BorderlineColor = System.Drawing.Color.Firebrick;
-            chartArea4.BackColor = System.Drawing.Color.White;
-            chartArea4.Name = "ChartArea1";
-            this.chart_ChiPhi.ChartAreas.Add(chartArea4);
+            chartArea14.BackColor = System.Drawing.Color.White;
+            chartArea14.Name = "ChartArea1";
+            this.chart_ChiPhi.ChartAreas.Add(chartArea14);
             this.chart_ChiPhi.Dock = System.Windows.Forms.DockStyle.Bottom;
-            legend4.Name = "Legend1";
-            this.chart_ChiPhi.Legends.Add(legend4);
+            legend14.Name = "Legend1";
+            this.chart_ChiPhi.Legends.Add(legend14);
             this.chart_ChiPhi.Location = new System.Drawing.Point(0, 58);
             this.chart_ChiPhi.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.chart_ChiPhi.Name = "chart_ChiPhi";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.chart_ChiPhi.Series.Add(series4);
+            series14.ChartArea = "ChartArea1";
+            series14.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series14.Legend = "Legend1";
+            series14.Name = "Series1";
+            this.chart_ChiPhi.Series.Add(series14);
             this.chart_ChiPhi.Size = new System.Drawing.Size(383, 304);
             this.chart_ChiPhi.TabIndex = 2;
             this.chart_ChiPhi.Text = "chart2";
@@ -730,7 +731,7 @@
             this.lb_ChiPhi.Location = new System.Drawing.Point(14, 11);
             this.lb_ChiPhi.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_ChiPhi.Name = "lb_ChiPhi";
-            this.lb_ChiPhi.Size = new System.Drawing.Size(147, 30);
+            this.lb_ChiPhi.Size = new System.Drawing.Size(190, 37);
             this.lb_ChiPhi.TabIndex = 1;
             this.lb_ChiPhi.Text = "Cơ cấu chi phí";
             this.lb_ChiPhi.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -749,37 +750,37 @@
             // chart_DoanhThu
             // 
             this.chart_DoanhThu.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.DashDotDot;
-            chartArea5.BackColor = System.Drawing.Color.White;
-            chartArea5.BackSecondaryColor = System.Drawing.Color.White;
-            chartArea5.Name = "ChartArea1";
-            this.chart_DoanhThu.ChartAreas.Add(chartArea5);
+            chartArea15.BackColor = System.Drawing.Color.White;
+            chartArea15.BackSecondaryColor = System.Drawing.Color.White;
+            chartArea15.Name = "ChartArea1";
+            this.chart_DoanhThu.ChartAreas.Add(chartArea15);
             this.chart_DoanhThu.Dock = System.Windows.Forms.DockStyle.Bottom;
-            legend5.Name = "Legend1";
-            this.chart_DoanhThu.Legends.Add(legend5);
+            legend15.Name = "Legend1";
+            this.chart_DoanhThu.Legends.Add(legend15);
             this.chart_DoanhThu.Location = new System.Drawing.Point(0, 45);
             this.chart_DoanhThu.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.chart_DoanhThu.Name = "chart_DoanhThu";
             this.chart_DoanhThu.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series5.BackImageTransparentColor = System.Drawing.Color.RosyBrown;
-            series5.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            series5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series5.Color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            series5.CustomProperties = "PieLineColor=192\\, 0\\, 0, CollectedColor=Teal";
-            series5.LabelBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            series5.LabelBorderColor = System.Drawing.Color.Cyan;
-            series5.LabelForeColor = System.Drawing.Color.Silver;
-            series5.Legend = "Legend1";
-            series5.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            series5.MarkerColor = System.Drawing.Color.Lime;
-            series5.MarkerImageTransparentColor = System.Drawing.Color.Yellow;
-            series5.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Diamond;
-            series5.Name = "Series1";
-            series5.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series5.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            series5.SmartLabelStyle.CalloutBackColor = System.Drawing.Color.DimGray;
-            this.chart_DoanhThu.Series.Add(series5);
+            series15.BackImageTransparentColor = System.Drawing.Color.RosyBrown;
+            series15.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            series15.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            series15.ChartArea = "ChartArea1";
+            series15.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series15.Color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            series15.CustomProperties = "PieLineColor=192\\, 0\\, 0, CollectedColor=Teal";
+            series15.LabelBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            series15.LabelBorderColor = System.Drawing.Color.Cyan;
+            series15.LabelForeColor = System.Drawing.Color.Silver;
+            series15.Legend = "Legend1";
+            series15.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            series15.MarkerColor = System.Drawing.Color.Lime;
+            series15.MarkerImageTransparentColor = System.Drawing.Color.Yellow;
+            series15.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Diamond;
+            series15.Name = "Series1";
+            series15.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
+            series15.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            series15.SmartLabelStyle.CalloutBackColor = System.Drawing.Color.DimGray;
+            this.chart_DoanhThu.Series.Add(series15);
             this.chart_DoanhThu.Size = new System.Drawing.Size(383, 317);
             this.chart_DoanhThu.TabIndex = 1;
             this.chart_DoanhThu.Text = "chart3";
@@ -793,7 +794,7 @@
             this.lb_Doanhthu.Location = new System.Drawing.Point(14, 12);
             this.lb_Doanhthu.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_Doanhthu.Name = "lb_Doanhthu";
-            this.lb_Doanhthu.Size = new System.Drawing.Size(183, 30);
+            this.lb_Doanhthu.Size = new System.Drawing.Size(235, 37);
             this.lb_Doanhthu.TabIndex = 0;
             this.lb_Doanhthu.Text = "Cơ cấu doanh thu";
             this.lb_Doanhthu.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -825,7 +826,7 @@
             this.lb_ChiPhiBaoCao.Location = new System.Drawing.Point(605, 163);
             this.lb_ChiPhiBaoCao.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_ChiPhiBaoCao.Name = "lb_ChiPhiBaoCao";
-            this.lb_ChiPhiBaoCao.Size = new System.Drawing.Size(19, 21);
+            this.lb_ChiPhiBaoCao.Size = new System.Drawing.Size(23, 28);
             this.lb_ChiPhiBaoCao.TabIndex = 12;
             this.lb_ChiPhiBaoCao.Text = "0";
             // 
@@ -836,7 +837,7 @@
             this.lb_SoDoanhThu.Location = new System.Drawing.Point(241, 163);
             this.lb_SoDoanhThu.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_SoDoanhThu.Name = "lb_SoDoanhThu";
-            this.lb_SoDoanhThu.Size = new System.Drawing.Size(19, 21);
+            this.lb_SoDoanhThu.Size = new System.Drawing.Size(23, 28);
             this.lb_SoDoanhThu.TabIndex = 11;
             this.lb_SoDoanhThu.Text = "0";
             // 
@@ -847,7 +848,7 @@
             this.label1.Location = new System.Drawing.Point(99, 163);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(134, 21);
+            this.label1.Size = new System.Drawing.Size(171, 28);
             this.label1.TabIndex = 10;
             this.label1.Text = "Tổng doanh thu :";
             // 
@@ -858,7 +859,7 @@
             this.lb_DoanhthuText.Location = new System.Drawing.Point(233, 163);
             this.lb_DoanhthuText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_DoanhthuText.Name = "lb_DoanhthuText";
-            this.lb_DoanhthuText.Size = new System.Drawing.Size(0, 21);
+            this.lb_DoanhthuText.Size = new System.Drawing.Size(0, 28);
             this.lb_DoanhthuText.TabIndex = 9;
             // 
             // lb_ChiPhiText
@@ -868,25 +869,25 @@
             this.lb_ChiPhiText.Location = new System.Drawing.Point(597, 163);
             this.lb_ChiPhiText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_ChiPhiText.Name = "lb_ChiPhiText";
-            this.lb_ChiPhiText.Size = new System.Drawing.Size(0, 21);
+            this.lb_ChiPhiText.Size = new System.Drawing.Size(0, 28);
             this.lb_ChiPhiText.TabIndex = 8;
             // 
             // chart_TongQuan
             // 
-            chartArea6.BackColor = System.Drawing.Color.White;
-            chartArea6.Name = "ChartArea1";
-            this.chart_TongQuan.ChartAreas.Add(chartArea6);
+            chartArea16.BackColor = System.Drawing.Color.White;
+            chartArea16.Name = "ChartArea1";
+            this.chart_TongQuan.ChartAreas.Add(chartArea16);
             this.chart_TongQuan.Dock = System.Windows.Forms.DockStyle.Bottom;
-            legend6.Name = "Legend1";
-            this.chart_TongQuan.Legends.Add(legend6);
+            legend16.Name = "Legend1";
+            this.chart_TongQuan.Legends.Add(legend16);
             this.chart_TongQuan.Location = new System.Drawing.Point(0, 261);
             this.chart_TongQuan.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.chart_TongQuan.Name = "chart_TongQuan";
-            series6.ChartArea = "ChartArea1";
-            series6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series6.Legend = "Legend1";
-            series6.Name = "Series1";
-            this.chart_TongQuan.Series.Add(series6);
+            series16.ChartArea = "ChartArea1";
+            series16.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series16.Legend = "Legend1";
+            series16.Name = "Series1";
+            this.chart_TongQuan.Series.Add(series16);
             this.chart_TongQuan.Size = new System.Drawing.Size(911, 477);
             this.chart_TongQuan.TabIndex = 7;
             this.chart_TongQuan.Text = "Biểu đồ";
@@ -898,7 +899,7 @@
             this.label5.Location = new System.Drawing.Point(486, 163);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(108, 21);
+            this.label5.Size = new System.Drawing.Size(137, 28);
             this.label5.TabIndex = 4;
             this.label5.Text = "Tổng chi phí :";
             // 
@@ -909,7 +910,7 @@
             this.label6.Location = new System.Drawing.Point(99, 163);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(0, 21);
+            this.label6.Size = new System.Drawing.Size(0, 28);
             this.label6.TabIndex = 1;
             // 
             // guna2GroupBox1
@@ -964,7 +965,7 @@
             this.lb_End.ForeColor = System.Drawing.Color.Black;
             this.lb_End.Location = new System.Drawing.Point(250, 59);
             this.lb_End.Name = "lb_End";
-            this.lb_End.Size = new System.Drawing.Size(86, 21);
+            this.lb_End.Size = new System.Drawing.Size(110, 28);
             this.lb_End.TabIndex = 26;
             this.lb_End.Text = "Đến ngày :";
             // 
@@ -975,7 +976,7 @@
             this.lb_Start.ForeColor = System.Drawing.Color.Black;
             this.lb_Start.Location = new System.Drawing.Point(250, 17);
             this.lb_Start.Name = "lb_Start";
-            this.lb_Start.Size = new System.Drawing.Size(76, 21);
+            this.lb_Start.Size = new System.Drawing.Size(96, 28);
             this.lb_Start.TabIndex = 25;
             this.lb_Start.Text = "Từ ngày :";
             // 
@@ -1143,20 +1144,20 @@
             // chiphi_product_pie
             // 
             this.chiphi_product_pie.BorderlineColor = System.Drawing.Color.Firebrick;
-            chartArea7.BackColor = System.Drawing.Color.White;
-            chartArea7.Name = "ChartArea1";
-            this.chiphi_product_pie.ChartAreas.Add(chartArea7);
+            chartArea17.BackColor = System.Drawing.Color.White;
+            chartArea17.Name = "ChartArea1";
+            this.chiphi_product_pie.ChartAreas.Add(chartArea17);
             this.chiphi_product_pie.Dock = System.Windows.Forms.DockStyle.Bottom;
-            legend7.Name = "Legend1";
-            this.chiphi_product_pie.Legends.Add(legend7);
+            legend17.Name = "Legend1";
+            this.chiphi_product_pie.Legends.Add(legend17);
             this.chiphi_product_pie.Location = new System.Drawing.Point(0, 33);
             this.chiphi_product_pie.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.chiphi_product_pie.Name = "chiphi_product_pie";
-            series7.ChartArea = "ChartArea1";
-            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series7.Legend = "Legend1";
-            series7.Name = "Series1";
-            this.chiphi_product_pie.Series.Add(series7);
+            series17.ChartArea = "ChartArea1";
+            series17.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series17.Legend = "Legend1";
+            series17.Name = "Series1";
+            this.chiphi_product_pie.Series.Add(series17);
             this.chiphi_product_pie.Size = new System.Drawing.Size(383, 329);
             this.chiphi_product_pie.TabIndex = 2;
             this.chiphi_product_pie.Text = "chart8";
@@ -1169,7 +1170,7 @@
             this.label28.Location = new System.Drawing.Point(4, 0);
             this.label28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(147, 30);
+            this.label28.Size = new System.Drawing.Size(190, 37);
             this.label28.TabIndex = 1;
             this.label28.Text = "Cơ cấu chi phí";
             this.label28.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -1188,37 +1189,37 @@
             // doanhthu_product_pie
             // 
             this.doanhthu_product_pie.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.DashDotDot;
-            chartArea8.BackColor = System.Drawing.Color.White;
-            chartArea8.BackSecondaryColor = System.Drawing.Color.White;
-            chartArea8.Name = "ChartArea1";
-            this.doanhthu_product_pie.ChartAreas.Add(chartArea8);
+            chartArea18.BackColor = System.Drawing.Color.White;
+            chartArea18.BackSecondaryColor = System.Drawing.Color.White;
+            chartArea18.Name = "ChartArea1";
+            this.doanhthu_product_pie.ChartAreas.Add(chartArea18);
             this.doanhthu_product_pie.Dock = System.Windows.Forms.DockStyle.Bottom;
-            legend8.Name = "Legend1";
-            this.doanhthu_product_pie.Legends.Add(legend8);
+            legend18.Name = "Legend1";
+            this.doanhthu_product_pie.Legends.Add(legend18);
             this.doanhthu_product_pie.Location = new System.Drawing.Point(0, 33);
             this.doanhthu_product_pie.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.doanhthu_product_pie.Name = "doanhthu_product_pie";
             this.doanhthu_product_pie.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series8.BackImageTransparentColor = System.Drawing.Color.RosyBrown;
-            series8.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            series8.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            series8.ChartArea = "ChartArea1";
-            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series8.Color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            series8.CustomProperties = "PieLineColor=192\\, 0\\, 0, CollectedColor=Teal";
-            series8.LabelBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            series8.LabelBorderColor = System.Drawing.Color.Cyan;
-            series8.LabelForeColor = System.Drawing.Color.Silver;
-            series8.Legend = "Legend1";
-            series8.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            series8.MarkerColor = System.Drawing.Color.Lime;
-            series8.MarkerImageTransparentColor = System.Drawing.Color.Yellow;
-            series8.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Diamond;
-            series8.Name = "Series1";
-            series8.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series8.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            series8.SmartLabelStyle.CalloutBackColor = System.Drawing.Color.DimGray;
-            this.doanhthu_product_pie.Series.Add(series8);
+            series18.BackImageTransparentColor = System.Drawing.Color.RosyBrown;
+            series18.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            series18.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            series18.ChartArea = "ChartArea1";
+            series18.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series18.Color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            series18.CustomProperties = "PieLineColor=192\\, 0\\, 0, CollectedColor=Teal";
+            series18.LabelBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            series18.LabelBorderColor = System.Drawing.Color.Cyan;
+            series18.LabelForeColor = System.Drawing.Color.Silver;
+            series18.Legend = "Legend1";
+            series18.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            series18.MarkerColor = System.Drawing.Color.Lime;
+            series18.MarkerImageTransparentColor = System.Drawing.Color.Yellow;
+            series18.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Diamond;
+            series18.Name = "Series1";
+            series18.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
+            series18.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            series18.SmartLabelStyle.CalloutBackColor = System.Drawing.Color.DimGray;
+            this.doanhthu_product_pie.Series.Add(series18);
             this.doanhthu_product_pie.Size = new System.Drawing.Size(383, 329);
             this.doanhthu_product_pie.TabIndex = 1;
             this.doanhthu_product_pie.Text = "chart7";
@@ -1231,7 +1232,7 @@
             this.label27.Location = new System.Drawing.Point(4, 0);
             this.label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(183, 30);
+            this.label27.Size = new System.Drawing.Size(235, 37);
             this.label27.TabIndex = 0;
             this.label27.Text = "Cơ cấu doanh thu";
             this.label27.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -1271,7 +1272,7 @@
             this.tongchiphiProduct_lbl.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tongchiphiProduct_lbl.Location = new System.Drawing.Point(12, 10);
             this.tongchiphiProduct_lbl.Name = "tongchiphiProduct_lbl";
-            this.tongchiphiProduct_lbl.Size = new System.Drawing.Size(13, 27);
+            this.tongchiphiProduct_lbl.Size = new System.Drawing.Size(16, 34);
             this.tongchiphiProduct_lbl.TabIndex = 4;
             this.tongchiphiProduct_lbl.Text = "0";
             // 
@@ -1283,26 +1284,26 @@
             this.label19.Location = new System.Drawing.Point(139, 12);
             this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(51, 25);
+            this.label19.Size = new System.Drawing.Size(64, 32);
             this.label19.TabIndex = 3;
             this.label19.Text = "VNĐ";
             // 
             // barchart_product
             // 
-            chartArea9.BackColor = System.Drawing.Color.White;
-            chartArea9.Name = "ChartArea1";
-            this.barchart_product.ChartAreas.Add(chartArea9);
+            chartArea10.BackColor = System.Drawing.Color.White;
+            chartArea10.Name = "ChartArea1";
+            this.barchart_product.ChartAreas.Add(chartArea10);
             this.barchart_product.Dock = System.Windows.Forms.DockStyle.Bottom;
-            legend9.Name = "Legend1";
-            this.barchart_product.Legends.Add(legend9);
+            legend10.Name = "Legend1";
+            this.barchart_product.Legends.Add(legend10);
             this.barchart_product.Location = new System.Drawing.Point(0, 285);
             this.barchart_product.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.barchart_product.Name = "barchart_product";
-            series9.ChartArea = "ChartArea1";
-            series9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series9.Legend = "Legend1";
-            series9.Name = "Series1";
-            this.barchart_product.Series.Add(series9);
+            series10.ChartArea = "ChartArea1";
+            series10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series10.Legend = "Legend1";
+            series10.Name = "Series1";
+            this.barchart_product.Series.Add(series10);
             this.barchart_product.Size = new System.Drawing.Size(926, 453);
             this.barchart_product.TabIndex = 7;
             this.barchart_product.Text = "Biểu đồ";
@@ -1325,7 +1326,7 @@
             this.doanhthuProduct_lbl.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.doanhthuProduct_lbl.Location = new System.Drawing.Point(12, 10);
             this.doanhthuProduct_lbl.Name = "doanhthuProduct_lbl";
-            this.doanhthuProduct_lbl.Size = new System.Drawing.Size(13, 27);
+            this.doanhthuProduct_lbl.Size = new System.Drawing.Size(16, 34);
             this.doanhthuProduct_lbl.TabIndex = 4;
             this.doanhthuProduct_lbl.Text = "0";
             // 
@@ -1337,7 +1338,7 @@
             this.label21.Location = new System.Drawing.Point(139, 12);
             this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(51, 25);
+            this.label21.Size = new System.Drawing.Size(64, 32);
             this.label21.TabIndex = 3;
             this.label21.Text = "VNĐ";
             // 
@@ -1349,7 +1350,7 @@
             this.label23.Location = new System.Drawing.Point(583, 163);
             this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(156, 32);
+            this.label23.Size = new System.Drawing.Size(194, 41);
             this.label23.TabIndex = 4;
             this.label23.Text = "Tổng chi phí";
             // 
@@ -1361,7 +1362,7 @@
             this.label24.Location = new System.Drawing.Point(76, 163);
             this.label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(197, 32);
+            this.label24.Size = new System.Drawing.Size(244, 41);
             this.label24.TabIndex = 1;
             this.label24.Text = "Tổng doanh thu";
             // 
@@ -1419,7 +1420,7 @@
             this.denngay_lbl_Product.Location = new System.Drawing.Point(357, 72);
             this.denngay_lbl_Product.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.denngay_lbl_Product.Name = "denngay_lbl_Product";
-            this.denngay_lbl_Product.Size = new System.Drawing.Size(82, 21);
+            this.denngay_lbl_Product.Size = new System.Drawing.Size(104, 28);
             this.denngay_lbl_Product.TabIndex = 8;
             this.denngay_lbl_Product.Text = "Đến ngày:";
             // 
@@ -1430,7 +1431,7 @@
             this.tungay_lbl_Product.Location = new System.Drawing.Point(357, 7);
             this.tungay_lbl_Product.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.tungay_lbl_Product.Name = "tungay_lbl_Product";
-            this.tungay_lbl_Product.Size = new System.Drawing.Size(72, 21);
+            this.tungay_lbl_Product.Size = new System.Drawing.Size(90, 28);
             this.tungay_lbl_Product.TabIndex = 7;
             this.tungay_lbl_Product.Text = "Từ ngày:";
             // 
@@ -1469,6 +1470,7 @@
             this.chuky_cbb_product.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(45)))), ((int)(((byte)(62)))));
             this.chuky_cbb_product.ItemHeight = 30;
             this.chuky_cbb_product.Items.AddRange(new object[] {
+            "Toàn bộ",
             "Theo tháng",
             "Theo năm",
             "Tùy chọn"});
@@ -1487,7 +1489,7 @@
             this.dtpker_product2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpker_product2.Location = new System.Drawing.Point(361, 96);
             this.dtpker_product2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.dtpker_product2.MaxDate = new System.DateTime(2025, 4, 29, 23, 3, 25, 0);
+            this.dtpker_product2.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpker_product2.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpker_product2.Name = "dtpker_product2";
             this.dtpker_product2.Size = new System.Drawing.Size(214, 38);
@@ -1502,7 +1504,7 @@
             this.label25.Location = new System.Drawing.Point(49, 48);
             this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(98, 21);
+            this.label25.Size = new System.Drawing.Size(126, 28);
             this.label25.TabIndex = 3;
             this.label25.Text = "Chọn chu kì:";
             // 
@@ -1530,7 +1532,7 @@
             this.label26.Location = new System.Drawing.Point(347, 48);
             this.label26.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(122, 21);
+            this.label26.Size = new System.Drawing.Size(154, 28);
             this.label26.TabIndex = 1;
             this.label26.Text = "Chọn thời điểm";
             // 
@@ -1570,7 +1572,7 @@
             // 
             // StatisticsView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.guna2TabControl1);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

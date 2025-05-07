@@ -41,13 +41,13 @@ namespace Cinema_Management_System.Views.Statistics
             Tungay_label.Visible = false;
             Denngay_label.Visible = false;
             startDay_date.Visible = false;
-            endDay_date.Visible = false; 
-            //startDay_date.MaxDate = DateTime.Now;
-            //endDay_date.MaxDate = DateTime.Now;
+            endDay_date.Visible = false;
+            //startDay_date.MaxDate = 12-31-9998;
+            //endDay_date.MaxDate = 12 / 31 / 9998;
             setupUI();
 
-            dtpker_product1.MaxDate = DateTime.Now;
-            dtpker_product2.MaxDate = DateTime.Now;
+            //dtpker_product1.MaxDate = DateTime.Now;
+            //dtpker_product2.MaxDate = DateTime.Now;
             tungay_lbl_Product.Visible = false;
             denngay_lbl_Product.Visible = false;
 
@@ -74,20 +74,27 @@ namespace Cinema_Management_System.Views.Statistics
             tongdoanhthu1_label.Text = "0";
             tongchiphi_label.Text = "0";
             guna2TabControl1.SelectedIndex = 2;
+            thoidiem_cbb.Visible = false;
             var db = new ConnectDataContext();
-            // Lấy ngày nhỏ nhất
+            // Lấy ngày nhỏ nhất    Tổng quát
             var minDate = new[] {
                 db.Bills.Min(b => b.BillDate),
                 db.Bill_SellProducts.Min(sp => sp.BillDate)
             }.Min();
 
-            // Lấy ngày lớn nhất
+            // Lấy ngày lớn nhất      Tổng quát
             var maxDate = new[] {
                     db.Bills.Max(b => b.BillDate),
                     db.Bill_SellProducts.Max(sp => sp.BillDate)
                 }.Max();
 
             VeBieuDo_Tongquat(minDate, maxDate);
+
+            VeBieuDo_Product();
+            thodiem_cbb_product.Visible = false;
+
+
+
         }
 
         private void SendMonthlyStatisticsEmail(int year, int month, string toEmail)
@@ -852,6 +859,7 @@ Hệ thống quản lý rạp chiếu phim StarCinema";
                     thoidiem_cbb.SelectedIndex = 0; // chọn mặc định
                 }
             }
+
         }
 
         private void thoidiem_cbb_SelectedIndexChanged(object sender, EventArgs e)
@@ -1032,7 +1040,7 @@ Hệ thống quản lý rạp chiếu phim StarCinema";
                     var chartArea = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
 
                     // Đặt màu nền cho ChartArea
-                    chartArea.BackColor = System.Drawing.Color.FromArgb(192, 255, 255);  // Màu nền (192, 255, 255)
+                    chartArea.BackColor = System.Drawing.Color.White;  // Màu nền (192, 255, 255)
 
                     doanhthu_product_pie.ChartAreas.Add(chartArea);
 
@@ -1119,7 +1127,7 @@ Hệ thống quản lý rạp chiếu phim StarCinema";
 
                     // Create a new chart area if necessary
                     var chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-                    chartArea1.BackColor = System.Drawing.Color.FromArgb(255, 224, 192);
+                    chartArea1.BackColor = System.Drawing.Color.White;
                     chiphi_product_pie.ChartAreas.Add(chartArea1);
 
                     // Create a new series for the pie chart with additional styling
@@ -1440,34 +1448,93 @@ Hệ thống quản lý rạp chiếu phim StarCinema";
 
         private void chuky_cbb_product_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selected = chuky_cbb_product.SelectedItem.ToString();
-
-            bool isCustom = !(selected == "Theo tháng" || selected == "Theo năm");
-            tungay_lbl_Product.Visible = isCustom;
-            denngay_lbl_Product.Visible = isCustom;
-
-            dtpker_product1.Visible = isCustom;
-            dtpker_product2.Visible = isCustom;
-            thodiem_cbb_product.Visible = !isCustom;
-            label26.Visible = !isCustom;
-
-            thodiem_cbb_product.Items.Clear();
-
-            if (selected == "Theo tháng")
+            string selected = chuky_cbb_product.SelectedItem?.ToString();
+            if (string.IsNullOrEmpty(selected))
+                return;
+            if(selected =="Toàn bộ")
             {
-                int currentMonth = DateTime.Now.Month;
-                for (int i = 1; i <= currentMonth; i++)
-                {
-                    thodiem_cbb_product.Items.Add($"Tháng {i} - {DateTime.Now.Year}");
-                }
-            }
-            else if (selected == "Theo năm")
+                VeBieuDo_Product();
+                tungay_lbl_Product.Visible = false;
+                denngay_lbl_Product.Visible = false;
+                dtpker_product1.Visible = false;
+                dtpker_product2.Visible = false;
+                thodiem_cbb_product.Visible = false;
+                label26.Visible = false;
+
+            } 
+            else
             {
-                for (int i = DateTime.Now.Year - 5; i <= DateTime.Now.Year; i++) // 5 năm gần đây
+
+                using (var context = new ConnectDataContext())
                 {
-                    thodiem_cbb_product.Items.Add(i.ToString());
+                    // Lấy ngày nhỏ nhất từ Bill_SellProducts
+                    DateTime minSellDate;
+                    if (!context.Bill_SellProducts.Any())
+                    {
+                        //MessageBox.Show("Không có dữ liệu trong Bill_SellProducts để hiển thị.");
+                        return;
+                    }
+                    minSellDate = context.Bill_SellProducts.Min(b => b.BillDate);
+
+                    // Lấy ngày lớn nhất từ Bill_AddProducts và Bill_ImportProducts
+                    DateTime maxAddImportDate;
+                    if (!context.Bill_AddProducts.Any() && !context.Bill_ImportProducts.Any())
+                    {
+                        //MessageBox.Show("Không có dữ liệu trong Bill_AddProducts và Bill_ImportProducts để hiển thị.");
+                        return;
+                    }
+                    var addDates = context.Bill_AddProducts.Select(b => b.BillDate);
+                    var importDates = context.Bill_ImportProducts.Select(b => b.BillDate);
+                    maxAddImportDate = addDates.Concat(importDates).Max();
+
+                    // Xử lý giao diện dựa trên lựa chọn
+                    bool isCustom = !(selected == "Theo tháng" || selected == "Theo năm");
+                    tungay_lbl_Product.Visible = isCustom;
+                    denngay_lbl_Product.Visible = isCustom;
+                    dtpker_product1.Visible = isCustom;
+                    dtpker_product2.Visible = isCustom;
+                    thodiem_cbb_product.Visible = !isCustom;
+                    label26.Visible = !isCustom;
+
+                    thodiem_cbb_product.Items.Clear();
+
+                    if (selected == "Theo tháng")
+                    {
+                        int minMonth = minSellDate.Month;
+                        int minYear = minSellDate.Year;
+                        int currentMonth = DateTime.Now.Month;
+                        int currentYear = DateTime.Now.Year;
+
+                        for (int year = minYear; year <= currentYear; year++)
+                        {
+                            int startMonth = (year == minYear) ? minMonth : 1;
+                            int endMonth = (year == currentYear) ? currentMonth : 12;
+
+                            for (int month = startMonth; month <= endMonth; month++)
+                            {
+                                thodiem_cbb_product.Items.Add($"Tháng {month} - {year}");
+                            }
+                        }
+                    }
+                    else if (selected == "Theo năm")
+                    {
+                        int minYear = minSellDate.Year;
+                        int currentYear = DateTime.Now.Year;
+
+                        for (int year = minYear; year <= currentYear; year++)
+                        {
+                            thodiem_cbb_product.Items.Add(year.ToString());
+                        }
+                    }
+
+                    if (thodiem_cbb_product.Items.Count > 0)
+                    {
+                        thodiem_cbb_product.SelectedIndex = 0;
+                    }
+
                 }
-            }
+            }    
+
         }
 
         private void dtpker_product1_ValueChanged(object sender, EventArgs e)
@@ -1795,6 +1862,150 @@ Hệ thống quản lý rạp chiếu phim StarCinema";
             vebieudocotdoi_product();
             vebieudotron_doanhthuProduct();
             vebieudotron_chiphiProduct();
+        }
+
+
+        public void VeBieuDo_Product()
+        {
+            using (var db = new ConnectDataContext())
+            {
+                // 1. Biểu đồ doanh thu (doanhthu_product_pie)
+                var revenueData = db.BillDetailProducts
+                    .Join(db.Products, bd => bd.Product_Id, p => p.ID, (bd, p) => new { p.Name, bd.TotalPrice })
+                    .GroupBy(x => x.Name)
+                    .Select(g => new
+                    {
+                        ProductName = g.Key,
+                        TotalRevenue = g.Sum(x => x.TotalPrice)
+                    })
+                    .OrderByDescending(x => x.TotalRevenue)
+                    .Take(5)
+                    .ToList();
+
+                double totalRevenuePie = revenueData.Sum(x => x.TotalRevenue);
+
+                // Clear previous data
+                doanhthu_product_pie.Series.Clear();
+                doanhthu_product_pie.ChartAreas.Clear();
+
+                // Create chart area
+                var chartArea = new System.Windows.Forms.DataVisualization.Charting.ChartArea
+                {
+                    BackColor = System.Drawing.Color.White
+                };
+                doanhthu_product_pie.ChartAreas.Add(chartArea);
+
+                // Create series for pie chart
+                var series1 = new System.Windows.Forms.DataVisualization.Charting.Series
+                {
+                    Name = "Revenue",
+                    IsValueShownAsLabel = false,
+                    ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie,
+                    BorderWidth = 1,
+                    BorderColor = System.Drawing.Color.White,
+                    ShadowOffset = 4
+                };
+                series1["ExplodedSliceColor"] = "White";
+                series1["DoughnutRadius"] = "70";
+
+                // Add data points
+                foreach (var data in revenueData)
+                {
+                    double percentage = (data.TotalRevenue / totalRevenuePie) * 100;
+                    int pointIndex = series1.Points.AddXY(data.ProductName, data.TotalRevenue);
+                    series1.Points[pointIndex].Label = "";
+                    series1.Points[pointIndex].Color = GetColorForIndex(pointIndex);
+                    series1.Points[pointIndex].LegendText = $"{data.ProductName}: {percentage:0.##}%";
+                }
+
+                doanhthu_product_pie.Series.Add(series1);
+
+                // 2. Biểu đồ chi phí (chiphi_product_pie)
+                var query1 = from bap in db.Bill_AddProducts
+                             join p in db.Products on bap.Product_Id equals p.ID
+                             select new
+                             {
+                                 ProductName = p.Name,
+                                 TotalPrice = bap.Quantity * bap.UnitPurchasePrice
+                             };
+
+                var query2 = from bap in db.Bill_ImportProducts
+                             join p in db.Products on bap.Product_Id equals p.ID
+                             select new
+                             {
+                                 ProductName = p.Name,
+                                 TotalPrice = bap.Quantity * bap.UnitPurchasePrice
+                             };
+
+                var combinedQuery = query1
+                    .Union(query2)
+                    .GroupBy(x => x.ProductName)
+                    .Select(group => new
+                    {
+                        ProductName = group.Key,
+                        TotalPrice = group.Sum(x => x.TotalPrice)
+                    })
+                    .OrderByDescending(x => x.TotalPrice)
+                    .Take(5)
+                    .ToList();
+
+                double totalCostPie = combinedQuery.Sum(x => x.TotalPrice);
+
+                // Clear previous data
+                chiphi_product_pie.Series.Clear();
+                chiphi_product_pie.ChartAreas.Clear();
+
+                // Create chart area
+                var chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea
+                {
+                    BackColor = System.Drawing.Color.White
+                };
+                chiphi_product_pie.ChartAreas.Add(chartArea1);
+
+                // Create series for pie chart
+                var series2 = new System.Windows.Forms.DataVisualization.Charting.Series
+                {
+                    Name = "Cost",
+                    IsValueShownAsLabel = false,
+                    ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie,
+                    BorderWidth = 1,
+                    BorderColor = System.Drawing.Color.White,
+                    ShadowOffset = 4
+                };
+                series2["ExplodedSliceColor"] = "White";
+                series2["DoughnutRadius"] = "70";
+
+                // Add data points
+                foreach (var data in combinedQuery)
+                {
+                    double percentage = (data.TotalPrice / totalCostPie) * 100;
+                    int pointIndex = series2.Points.AddXY(data.ProductName, data.TotalPrice);
+                    series2.Points[pointIndex].Label = "";
+                    series2.Points[pointIndex].Color = GetColorForIndex(pointIndex);
+                    series2.Points[pointIndex].LegendText = $"{data.ProductName}: {percentage:0.##}%";
+                }
+
+                chiphi_product_pie.Series.Add(series2);
+
+                // 3. Tính tổng doanh thu và tổng chi phí
+                var totalRevenue = db.Bill_SellProducts
+                    .Sum(b => (decimal?)b.TotalAmount) ?? 0;
+
+                var totalImportProductCost = db.Bill_ImportProducts
+                    .Sum(b => (decimal?)b.Quantity * b.UnitPurchasePrice) ?? 0;
+
+                var totalAddProductCost = db.Bill_AddProducts
+                    .Sum(b => (decimal?)b.Quantity * b.UnitPurchasePrice) ?? 0;
+
+                var totalCost = (totalImportProductCost + totalAddProductCost);
+
+                // Cập nhật label
+                doanhthuProduct_lbl.Text = totalRevenue.ToString("N0");
+                tongchiphiProduct_lbl.Text = totalCost.ToString("N0");
+
+                // 4. Gọi hàm vecotdoi
+                vecotdoi(totalRevenue, totalCost);
+            }
         }
     }
 }
