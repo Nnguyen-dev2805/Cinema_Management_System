@@ -70,7 +70,7 @@ namespace Cinema_Management_System.Views.CustomerManagement
             this.BackColor = SystemColors.Control;
         }
 
-        private void LoadCustomerData()
+        public void LoadCustomerData()
         {
             if (CustomerDA.Instance == null)
             {
@@ -157,10 +157,11 @@ namespace Cinema_Management_System.Views.CustomerManagement
         {
             if (Application.OpenForms["UpdateCustomer"] == null)
             {
-                UpdateCustomer updateForm = new UpdateCustomer
+                UpdateCustomer updateForm = new UpdateCustomer(customer)
                 {
                     Opacity = 0
-                };
+                }
+                ;
                 updateForm.Show();
 
                 Timer fadeTimer = new Timer { Interval = 10 };
@@ -181,7 +182,7 @@ namespace Cinema_Management_System.Views.CustomerManagement
             }
             else
             {
-                Application.OpenForms["AddCustomer"].Activate();
+                Application.OpenForms["UpdateCustomer"].Activate();
             }
         }
 
@@ -294,13 +295,6 @@ namespace Cinema_Management_System.Views.CustomerManagement
             debounceTimer.Stop();
             string keyword = _debounceKeyword;
             string searchType = _currentSearchType.ToString();
-            //var filtered = CustomerDA.Instance.SearchCustomers(keyword, searchType, 10);
-            //dgv_customer.DataSource = filtered;
-            if (CustomerDA.Instance == null)
-            {
-                MessageBoxHelper.ShowError("Lỗi", "Không thể truy cập CustomerDA.");
-                return;
-            }
             var filtered = CustomerDA.Instance.SearchCustomers(keyword, searchType, 10) ?? new List<CustomerDTO>();
             dgv_customer.DataSource = filtered;
         }

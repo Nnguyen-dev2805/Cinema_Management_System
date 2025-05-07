@@ -37,6 +37,10 @@ namespace Cinema_Management_System.Views.ProductManagement
             InitializeDataGridView();
             _product = new ProductDA();
             LoadProducts();
+            if (AboutAccount_Form.currentRole == "Nhân viên")
+            {
+                this.addProduct_btn.Hide();
+            }
         }
 
         private void LoadProducts()
@@ -73,29 +77,34 @@ namespace Cinema_Management_System.Views.ProductManagement
                 Panel productItem = CreateProductPanel(product);
                 Label title = CreateProductTitleLabel(product.Name);
                 Button productButton = CreateProductButton(product);
-                Button btnMoreOptions = CreateMoreOptionsButton(product, productItem);
+                if (AboutAccount_Form.currentRole != "Nhân viên")
+                {
+                    Button btnMoreOptions = CreateMoreOptionsButton(product, productItem);
+                    btnMoreOptions.Top = 0;
+                    btnMoreOptions.Left = productButton.Width - btnMoreOptions.Width - 10;
+                    productButton.Top = btnMoreOptions.Bottom + 10;
+                    btnMoreOptions.Visible = false;
+                    productItem.Controls.Add(btnMoreOptions);
+                    // Thiết lập hiệu ứng hover
+                    SetupHoverEffect(productButton, title, btnMoreOptions, product);
+                }    
+                
                 Label priceLabel = CreateProductPriceLabel((int)product.Price);
                 Label quantityLabel = CreateProductQuantityLabel(product.Quantity);
 
                 // Sắp xếp vị trí các control trong Panel
-                btnMoreOptions.Top = 0;
-                btnMoreOptions.Left = productButton.Width - btnMoreOptions.Width - 10;
-                productButton.Top = btnMoreOptions.Bottom + 10;
+                
                 title.Top = productButton.Bottom + 5;
                 priceLabel.Top = title.Bottom + 2;
                 quantityLabel.Top = priceLabel.Bottom + 2;
-                btnMoreOptions.Visible = false;
+                
 
                 // Thêm các control vào Panel
                 productItem.Controls.Add(title);
                 productItem.Controls.Add(priceLabel);
                 productItem.Controls.Add(quantityLabel);
                 productItem.Controls.Add(productButton);
-                productItem.Controls.Add(btnMoreOptions);
-
-                // Thiết lập hiệu ứng hover
-                SetupHoverEffect(productButton, title, btnMoreOptions, product);
-
+                
                 // Thêm Panel vào FlowLayoutPanel
                 productPanel.Controls.Add(productItem);
             }
@@ -629,51 +638,6 @@ namespace Cinema_Management_System.Views.ProductManagement
             LoadProducts();
         }
 
-        private void ProductManagementView_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2PictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void productPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2HtmlLabel2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void productPanel_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void guna2Panel6_Paint(object sender, PaintEventArgs e)
         {
             int radius = 20; // bo góc 20px
@@ -690,10 +654,10 @@ namespace Cinema_Management_System.Views.ProductManagement
                 path.CloseFigure();
 
                 e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-                using (Pen pen = new Pen(Color.OrangeRed, 1)) // viền đen, dày 2px
-                {
-                    e.Graphics.DrawPath(pen, path);
-                }
+                //using (Pen pen = new Pen(Color.OrangeRed, 1)) // viền đen, dày 2px
+                //{
+                //    e.Graphics.DrawPath(pen, path);
+                //}
             }
         }
 
@@ -713,10 +677,10 @@ namespace Cinema_Management_System.Views.ProductManagement
                 path.CloseFigure();
 
                 e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-                using (Pen pen = new Pen(Color.OrangeRed, 1)) // viền đen, dày 2px
-                {
-                    e.Graphics.DrawPath(pen, path);
-                }
+                //using (Pen pen = new Pen(Color.OrangeRed, 1)) // viền đen, dày 2px
+                //{
+                //    e.Graphics.DrawPath(pen, path);
+                //}
             }
         }
 
@@ -741,10 +705,10 @@ namespace Cinema_Management_System.Views.ProductManagement
                 path.CloseFigure();
 
                 e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-                using (Pen pen = new Pen(Color.OrangeRed, 1)) // viền đen, dày 2px
-                {
-                    e.Graphics.DrawPath(pen, path);
-                }
+                //using (Pen pen = new Pen(Color.OrangeRed, 1)) // viền đen, dày 2px
+                //{
+                //    e.Graphics.DrawPath(pen, path);
+                //}
             }
         }
 

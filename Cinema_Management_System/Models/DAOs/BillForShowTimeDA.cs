@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static Cinema_Management_System.ViewModels.CustomerManagement.CustomerManagementVm;
 using System.Windows.Input;
+using System.Windows;
 
 namespace Cinema_Management_System.Models.DAOs
 {
@@ -27,8 +28,10 @@ namespace Cinema_Management_System.Models.DAOs
 
         public int AddBillShowTime(Bill newBill)
         {
+            
             try
             {
+                Connect.Refresh(System.Data.Linq.RefreshMode.OverwriteCurrentValues, Connect.Bills);
                 Connect.Bills.InsertOnSubmit(newBill);
                 Connect.SubmitChanges();
                 return newBill.Id;
@@ -161,6 +164,25 @@ namespace Cinema_Management_System.Models.DAOs
             catch
             {
                 return null;
+            }
+        }
+
+
+        public List<int> GetYearInBills()
+        {
+            try
+            {
+                List<int> years = (from bill in Connect.Bills
+                                   select bill.BillDate.Year)
+                                  .Distinct()
+                                  .OrderByDescending(y => y)
+                                  .ToList();
+
+                return years;
+            }
+            catch
+            {
+                return new List<int>();
             }
         }
 

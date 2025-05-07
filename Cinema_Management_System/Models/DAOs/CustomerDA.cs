@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using System.Text;
 using Cinema_Management_System.Models.DTOs;
 using Cinema_Management_System.Views.MessageBox;
 
@@ -218,6 +220,27 @@ namespace Cinema_Management_System.Models.DAOs
             }
         }
 
+        // Hàm loại bỏ dấu tiếng Việt
+        private static string RemoveDiacritics(string text)
+        {
+            if (string.IsNullOrEmpty(text))
+                return text;
+
+            string formD = text.Normalize(NormalizationForm.FormD);
+            StringBuilder sb = new StringBuilder();
+
+            foreach (char ch in formD)
+            {
+                UnicodeCategory uc = CharUnicodeInfo.GetUnicodeCategory(ch);
+                if (uc != UnicodeCategory.NonSpacingMark)
+                {
+                    sb.Append(ch);
+                }
+            }
+
+            return sb.ToString().Normalize(NormalizationForm.FormC);
+        }
+
         // tìm kiếm
         // Hàm tìm kiếm khách hàng theo tên hoặc số điện thoại, giới hạn số lượng kết quả
         public List<CustomerDTO> SearchCustomers(string keyword, string searchType, int limit = 15)
@@ -227,8 +250,9 @@ namespace Cinema_Management_System.Models.DAOs
                 keyword = keyword.ToLower();
                 if (searchType == "FullName")
                 {
-                    return context.CUSTOMERs
-                        .Where(c => c.FullName.ToLower().Contains(keyword))
+                    string normalizedKeyword = RemoveDiacritics(keyword.ToLower());
+                    return context.CUSTOMERs.AsEnumerable()
+                        .Where(c => RemoveDiacritics(c.FullName.ToLower()).Contains(keyword) && c.IsDeleted==false)
                         .OrderBy(c => c.FullName)
                         .Take(limit)
                         .Select(c => new CustomerDTO
@@ -245,7 +269,7 @@ namespace Cinema_Management_System.Models.DAOs
                 else if (searchType == "PhoneNumber")
                 {
                     return context.CUSTOMERs
-                        .Where(c => c.PhoneNumber.Contains(keyword))
+                        .Where(c => c.PhoneNumber.Contains(keyword) && c.IsDeleted == false)
                         .OrderBy(c => c.PhoneNumber)
                         .Take(limit)
                         .Select(c => new CustomerDTO

@@ -2,6 +2,9 @@
 using Cinema_Management_System.Models.DAOs;
 using Cinema_Management_System.Models.DTOs;
 using Cinema_Management_System.ViewModels.ShowTimeManagementVM;
+using Guna.UI2.WinForms.Suite;
+using Guna.UI2.WinForms;
+using Cinema_Management_System.Views.MessageBox;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,15 +24,31 @@ namespace Cinema_Management_System.Views.ShowTimeManagement
         private AuditoriumViewModels _viewModelAuditorium;
         bool AddStatus = true;
         ShowTimeDTO _showTimeUpdate;
+        private Guna2ShadowForm shadowForm;
         public AddShowTimeForm()
         {
             InitializeComponent();
             _viewModelShowTime = new ShowTimeViewModels();
             _viewModelAuditorium= new AuditoriumViewModels();
+            CB_NameShowTime.Enabled = true;
+            DTP_DateShowTimeMovie.Enabled = true;
+            DTP_TimeStartShowTimes.Enabled = true;
             this.LoadListMovie();
             this.LoadAuditorium();
             this.AddStatus = true;
             DTP_DateShowTimeMovie.Value = DateTime.Now.Date;
+            SetupUI();
+        }
+
+        private void SetupUI()
+        {
+            DragHelper.EnableDrag(this, control_Panel);
+            shadowForm = new Guna2ShadowForm
+            {
+                ShadowColor = Color.Black,
+                BorderRadius = 20
+            };
+            shadowForm.SetShadowForm(this);
         }
 
         public AddShowTimeForm(ShowTimeDTO showtimeUpdate)
@@ -38,12 +57,15 @@ namespace Cinema_Management_System.Views.ShowTimeManagement
             _showTimeUpdate = showtimeUpdate;
             _viewModelShowTime = new ShowTimeViewModels();
             _viewModelAuditorium = new AuditoriumViewModels();
+            CB_NameShowTime.Enabled = false;
+            DTP_DateShowTimeMovie.Enabled = false;
+            DTP_TimeStartShowTimes.Enabled = false;
             this.LoadListMovie();
             this.LoadAuditorium();
             this.AddStatus = false;
             this.Label_Title.Text = "Sửa xuất chiếu";
             this.LoadinfoShowTime(showtimeUpdate);
-            DTP_DateShowTimeMovie.Value = DateTime.Now.Date;
+            DTP_DateShowTimeMovie.Value = showtimeUpdate.StartTime.Date;
         }
 
         // hien thi thong hien hien co
@@ -55,7 +77,7 @@ namespace Cinema_Management_System.Views.ShowTimeManagement
             CB_NameShowTime.SelectedValue = showTimeUpdate.Movie_id;
             CB_Auditorium.SelectedValue = showTimeUpdate.Auditorium_Id;
             DTP_DateShowTimeMovie.Value = showTimeUpdate.StartTime.Date;
-            txt_TimeMovieStart.Text = showTimeUpdate.StartTime.ToString("HH:mm");
+            this.DTP_TimeStartShowTimes.Text = showTimeUpdate.StartTime.ToString("HH:mm");
             txt_PriceTicket.Text = showTimeUpdate.SeatTicketPrice.ToString("F0");
         }
 
@@ -100,19 +122,20 @@ namespace Cinema_Management_System.Views.ShowTimeManagement
             {
                 if (CB_NameShowTime.SelectedItem == null || CB_Auditorium.SelectedItem == null)
                 {
-                    System.Windows.Forms.MessageBox.Show("Vui lòng chọn đầy đủ thông tin!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBoxHelper.ShowError("Lỗi", "Vui lòng chọn đầy đủ thông tin!");
+                    //System.Windows.Forms.MessageBox.Show("Vui lòng chọn đầy đủ thông tin!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
                 int movieID = (int)CB_NameShowTime.SelectedValue;
                 int auditoriumID = (int)CB_Auditorium.SelectedValue;
                 DateTime showDate = DTP_DateShowTimeMovie.Value.Date;
-                TimeSpan showTime = TimeSpan.Parse(this.txt_TimeMovieStart.Text);
+                TimeSpan showTime = this.DTP_TimeStartShowTimes.Value.TimeOfDay;
                 int ticketPrice;
 
                 if (!int.TryParse(txt_PriceTicket.Text, out ticketPrice))
                 {
-                    System.Windows.Forms.MessageBox.Show("Giá vé không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBoxHelper.ShowError("Lỗi", "Giá vé không hợp lệ!");
                     return;
                 }
                 // Neu la formn Add ShowTime
@@ -122,12 +145,12 @@ namespace Cinema_Management_System.Views.ShowTimeManagement
 
                     if (success)
                     {
-                        System.Windows.Forms.MessageBox.Show("Thêm suất chiếu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBoxHelper.ShowSuccess("Thông báo", "Thêm suất chiếu thành công!");
                         this.Close();
                     }
                     else
                     {
-                        System.Windows.Forms.MessageBox.Show("Thêm suất chiếu thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBoxHelper.ShowError("Lỗi", "Thêm suất chiếu thất bại!");
                     }
                 }
                 // Neu la Form Update Showtime
@@ -138,19 +161,22 @@ namespace Cinema_Management_System.Views.ShowTimeManagement
 
                     if (success)
                     {
-                        System.Windows.Forms.MessageBox.Show("Sửa xuất chiếu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBoxHelper.ShowSuccess("Thông báo", "Sửa xuất chiếu thành công!");
+                        //System.Windows.Forms.MessageBox.Show("Sửa xuất chiếu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
                     }
                     else
                     {
-                        System.Windows.Forms.MessageBox.Show("Sửa xuất chiếu thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBoxHelper.ShowError("Lỗi", "Sửa xuất chiếu thất bại!");
+                        //System.Windows.Forms.MessageBox.Show("Sửa xuất chiếu thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
 
             }
             catch
             {
-                System.Windows.Forms.MessageBox.Show("Thêm suất chiếu thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBoxHelper.ShowError("Lỗi", "Thêm suất chiếu thất bại!");
+                //System.Windows.Forms.MessageBox.Show("Thêm suất chiếu thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
