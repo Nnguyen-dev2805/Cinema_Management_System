@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -53,6 +53,7 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.xuatExcel_bnt = new Guna.UI2.WinForms.Guna2Button();
             this.lammoi_bnt = new Guna.UI2.WinForms.Guna2Button();
             this.thoidiem_label = new System.Windows.Forms.Label();
             this.thoidiem_cbb = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -73,7 +74,6 @@
             this.guna2MouseStateHandler1 = new Guna.UI2.WinForms.Guna2MouseStateHandler(this.components);
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.xuatExcel_bnt = new Guna.UI2.WinForms.Guna2Button();
             this.guna2TabControl1.SuspendLayout();
             this.Tongquat_tab.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
@@ -178,20 +178,20 @@
             // bar_chart_TQ
             // 
             this.bar_chart_TQ.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(240)))));
-            chartArea4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(240)))));
-            chartArea4.Name = "ChartArea1";
-            this.bar_chart_TQ.ChartAreas.Add(chartArea4);
+            chartArea1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(240)))));
+            chartArea1.Name = "ChartArea1";
+            this.bar_chart_TQ.ChartAreas.Add(chartArea1);
             this.bar_chart_TQ.Dock = System.Windows.Forms.DockStyle.Bottom;
-            legend4.Name = "Legend1";
-            this.bar_chart_TQ.Legends.Add(legend4);
+            legend1.Name = "Legend1";
+            this.bar_chart_TQ.Legends.Add(legend1);
             this.bar_chart_TQ.Location = new System.Drawing.Point(0, 261);
             this.bar_chart_TQ.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.bar_chart_TQ.Name = "bar_chart_TQ";
-            series4.ChartArea = "ChartArea1";
-            series4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.bar_chart_TQ.Series.Add(series4);
+            series1.ChartArea = "ChartArea1";
+            series1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.bar_chart_TQ.Series.Add(series1);
             this.bar_chart_TQ.Size = new System.Drawing.Size(911, 477);
             this.bar_chart_TQ.TabIndex = 7;
             this.bar_chart_TQ.Text = "Biểu đồ";
@@ -216,7 +216,7 @@
             this.label13.Location = new System.Drawing.Point(231, 12);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(51, 25);
+            this.label13.Size = new System.Drawing.Size(64, 32);
             this.label13.TabIndex = 3;
             this.label13.Text = "VNĐ";
             // 
@@ -227,7 +227,7 @@
             this.tongchiphi_label.Location = new System.Drawing.Point(4, 12);
             this.tongchiphi_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.tongchiphi_label.Name = "tongchiphi_label";
-            this.tongchiphi_label.Size = new System.Drawing.Size(61, 21);
+            this.tongchiphi_label.Size = new System.Drawing.Size(76, 28);
             this.tongchiphi_label.TabIndex = 3;
             this.tongchiphi_label.Text = "label14";
             // 
@@ -251,7 +251,7 @@
             this.label15.Location = new System.Drawing.Point(231, 12);
             this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(51, 25);
+            this.label15.Size = new System.Drawing.Size(64, 32);
             this.label15.TabIndex = 3;
             this.label15.Text = "VNĐ";
             // 
@@ -262,7 +262,7 @@
             this.tongdoanhthu_label.Location = new System.Drawing.Point(4, 12);
             this.tongdoanhthu_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.tongdoanhthu_label.Name = "tongdoanhthu_label";
-            this.tongdoanhthu_label.Size = new System.Drawing.Size(61, 21);
+            this.tongdoanhthu_label.Size = new System.Drawing.Size(76, 28);
             this.tongdoanhthu_label.TabIndex = 3;
             this.tongdoanhthu_label.Text = "label16";
             // 
@@ -273,7 +273,7 @@
             this.label17.Location = new System.Drawing.Point(485, 174);
             this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(104, 21);
+            this.label17.Size = new System.Drawing.Size(132, 28);
             this.label17.TabIndex = 4;
             this.label17.Text = "Tổng chi phí ";
             // 
@@ -284,7 +284,7 @@
             this.label18.Location = new System.Drawing.Point(98, 174);
             this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(126, 21);
+            this.label18.Size = new System.Drawing.Size(160, 28);
             this.label18.TabIndex = 1;
             this.label18.Text = "Tổng doanh thu";
             // 
@@ -315,6 +315,23 @@
             this.guna2GroupBox2.TabIndex = 0;
             this.guna2GroupBox2.Text = "Khoảng thời gian";
             // 
+            // xuatExcel_bnt
+            // 
+            this.xuatExcel_bnt.BorderRadius = 20;
+            this.xuatExcel_bnt.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.xuatExcel_bnt.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.xuatExcel_bnt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.xuatExcel_bnt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.xuatExcel_bnt.FillColor = System.Drawing.Color.Brown;
+            this.xuatExcel_bnt.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xuatExcel_bnt.ForeColor = System.Drawing.Color.White;
+            this.xuatExcel_bnt.Location = new System.Drawing.Point(696, 58);
+            this.xuatExcel_bnt.Name = "xuatExcel_bnt";
+            this.xuatExcel_bnt.Size = new System.Drawing.Size(174, 35);
+            this.xuatExcel_bnt.TabIndex = 10;
+            this.xuatExcel_bnt.Text = "Xuất Excel";
+            this.xuatExcel_bnt.Click += new System.EventHandler(this.xuatExcel_bnt_Click);
+            // 
             // lammoi_bnt
             // 
             this.lammoi_bnt.BorderRadius = 20;
@@ -338,7 +355,7 @@
             this.thoidiem_label.Location = new System.Drawing.Point(410, 41);
             this.thoidiem_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.thoidiem_label.Name = "thoidiem_label";
-            this.thoidiem_label.Size = new System.Drawing.Size(130, 21);
+            this.thoidiem_label.Size = new System.Drawing.Size(165, 28);
             this.thoidiem_label.TabIndex = 8;
             this.thoidiem_label.Text = "Chọn thời điểm :";
             // 
@@ -367,7 +384,7 @@
             this.label31.Location = new System.Drawing.Point(56, 41);
             this.label31.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(102, 21);
+            this.label31.Size = new System.Drawing.Size(132, 28);
             this.label31.TabIndex = 6;
             this.label31.Text = "Chọn chu kì :";
             // 
@@ -385,6 +402,7 @@
             this.chuki_cbb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.chuki_cbb.ItemHeight = 30;
             this.chuki_cbb.Items.AddRange(new object[] {
+            "Toàn bộ",
             "Theo tháng",
             "Theo năm",
             "Tùy chỉnh"});
@@ -417,7 +435,7 @@
             this.Denngay_label.Location = new System.Drawing.Point(395, 72);
             this.Denngay_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Denngay_label.Name = "Denngay_label";
-            this.Denngay_label.Size = new System.Drawing.Size(90, 21);
+            this.Denngay_label.Size = new System.Drawing.Size(116, 28);
             this.Denngay_label.TabIndex = 3;
             this.Denngay_label.Text = "Đến ngày : ";
             // 
@@ -444,7 +462,7 @@
             this.Tungay_label.Location = new System.Drawing.Point(395, 0);
             this.Tungay_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Tungay_label.Name = "Tungay_label";
-            this.Tungay_label.Size = new System.Drawing.Size(80, 21);
+            this.Tungay_label.Size = new System.Drawing.Size(102, 28);
             this.Tungay_label.TabIndex = 1;
             this.Tungay_label.Text = "Từ ngày : ";
             // 
@@ -466,20 +484,20 @@
             // 
             this.CPTQ_piechart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.CPTQ_piechart.BorderlineColor = System.Drawing.Color.Firebrick;
-            chartArea5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            chartArea5.Name = "ChartArea1";
-            this.CPTQ_piechart.ChartAreas.Add(chartArea5);
+            chartArea2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            chartArea2.Name = "ChartArea1";
+            this.CPTQ_piechart.ChartAreas.Add(chartArea2);
             this.CPTQ_piechart.Dock = System.Windows.Forms.DockStyle.Bottom;
-            legend5.Name = "Legend1";
-            this.CPTQ_piechart.Legends.Add(legend5);
+            legend2.Name = "Legend1";
+            this.CPTQ_piechart.Legends.Add(legend2);
             this.CPTQ_piechart.Location = new System.Drawing.Point(0, 58);
             this.CPTQ_piechart.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.CPTQ_piechart.Name = "CPTQ_piechart";
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series5.Legend = "Legend1";
-            series5.Name = "Series1";
-            this.CPTQ_piechart.Series.Add(series5);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.CPTQ_piechart.Series.Add(series2);
             this.CPTQ_piechart.Size = new System.Drawing.Size(383, 304);
             this.CPTQ_piechart.TabIndex = 2;
             this.CPTQ_piechart.Text = "chart4";
@@ -492,7 +510,7 @@
             this.label11.Location = new System.Drawing.Point(114, 12);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(147, 30);
+            this.label11.Size = new System.Drawing.Size(190, 37);
             this.label11.TabIndex = 1;
             this.label11.Text = "Cơ cấu chi phí";
             this.label11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -516,37 +534,37 @@
             this.DTTQ_piechart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.DTTQ_piechart.BorderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.DTTQ_piechart.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.DashDotDot;
-            chartArea6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            chartArea6.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            chartArea6.Name = "ChartArea1";
-            this.DTTQ_piechart.ChartAreas.Add(chartArea6);
+            chartArea3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            chartArea3.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            chartArea3.Name = "ChartArea1";
+            this.DTTQ_piechart.ChartAreas.Add(chartArea3);
             this.DTTQ_piechart.Dock = System.Windows.Forms.DockStyle.Bottom;
-            legend6.Name = "Legend1";
-            this.DTTQ_piechart.Legends.Add(legend6);
+            legend3.Name = "Legend1";
+            this.DTTQ_piechart.Legends.Add(legend3);
             this.DTTQ_piechart.Location = new System.Drawing.Point(0, 45);
             this.DTTQ_piechart.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.DTTQ_piechart.Name = "DTTQ_piechart";
             this.DTTQ_piechart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series6.BackImageTransparentColor = System.Drawing.Color.RosyBrown;
-            series6.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            series6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            series6.ChartArea = "ChartArea1";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series6.Color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            series6.CustomProperties = "PieLineColor=192\\, 0\\, 0, CollectedColor=Teal";
-            series6.LabelBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            series6.LabelBorderColor = System.Drawing.Color.Cyan;
-            series6.LabelForeColor = System.Drawing.Color.Silver;
-            series6.Legend = "Legend1";
-            series6.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            series6.MarkerColor = System.Drawing.Color.Lime;
-            series6.MarkerImageTransparentColor = System.Drawing.Color.Yellow;
-            series6.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Diamond;
-            series6.Name = "Series1";
-            series6.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series6.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            series6.SmartLabelStyle.CalloutBackColor = System.Drawing.Color.DimGray;
-            this.DTTQ_piechart.Series.Add(series6);
+            series3.BackImageTransparentColor = System.Drawing.Color.RosyBrown;
+            series3.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            series3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series3.Color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            series3.CustomProperties = "PieLineColor=192\\, 0\\, 0, CollectedColor=Teal";
+            series3.LabelBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            series3.LabelBorderColor = System.Drawing.Color.Cyan;
+            series3.LabelForeColor = System.Drawing.Color.Silver;
+            series3.Legend = "Legend1";
+            series3.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            series3.MarkerColor = System.Drawing.Color.Lime;
+            series3.MarkerImageTransparentColor = System.Drawing.Color.Yellow;
+            series3.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Diamond;
+            series3.Name = "Series1";
+            series3.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
+            series3.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            series3.SmartLabelStyle.CalloutBackColor = System.Drawing.Color.DimGray;
+            this.DTTQ_piechart.Series.Add(series3);
             this.DTTQ_piechart.Size = new System.Drawing.Size(383, 317);
             this.DTTQ_piechart.TabIndex = 1;
             this.DTTQ_piechart.Text = "chart5";
@@ -559,7 +577,7 @@
             this.label12.Location = new System.Drawing.Point(78, 5);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(183, 30);
+            this.label12.Size = new System.Drawing.Size(235, 37);
             this.label12.TabIndex = 0;
             this.label12.Text = "Cơ cấu doanh thu";
             this.label12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -596,26 +614,9 @@
             this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
             this.guna2BorderlessForm1.TransparentWhileDrag = true;
             // 
-            // xuatExcel_bnt
-            // 
-            this.xuatExcel_bnt.BorderRadius = 20;
-            this.xuatExcel_bnt.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.xuatExcel_bnt.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.xuatExcel_bnt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.xuatExcel_bnt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.xuatExcel_bnt.FillColor = System.Drawing.Color.Brown;
-            this.xuatExcel_bnt.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xuatExcel_bnt.ForeColor = System.Drawing.Color.White;
-            this.xuatExcel_bnt.Location = new System.Drawing.Point(696, 58);
-            this.xuatExcel_bnt.Name = "xuatExcel_bnt";
-            this.xuatExcel_bnt.Size = new System.Drawing.Size(174, 35);
-            this.xuatExcel_bnt.TabIndex = 10;
-            this.xuatExcel_bnt.Text = "Xuất Excel";
-            this.xuatExcel_bnt.Click += new System.EventHandler(this.xuatExcel_bnt_Click);
-            // 
             // StatisticsView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.guna2TabControl1);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

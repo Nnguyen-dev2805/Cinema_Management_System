@@ -33,6 +33,22 @@ namespace Cinema_Management_System.Views.Statistics
             endDay_date.MaxDate = DateTime.Now;
 
 
+            var db = new ConnectDataContext();
+            // Lấy ngày nhỏ nhất
+            var minDate = new[] {
+                            db.Bills.Min(b => b.BillDate),
+                            db.Bill_SellProducts.Min(sp => sp.BillDate)
+                        }.Min();
+
+            // Lấy ngày lớn nhất
+            var maxDate = new[] {
+                                db.Bills.Max(b => b.BillDate),
+                                db.Bill_SellProducts.Max(sp => sp.BillDate)
+                            }.Max();
+
+            VeBieuDo_Tongquat(minDate, maxDate);
+
+
             // Thiết lập Timer để kiểm tra hàng ngày
             //System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
             //timer.Interval = 24 * 60 * 60 * 1000; // 24 giờ
@@ -249,41 +265,76 @@ namespace Cinema_Management_System.Views.Statistics
 
         private void chuki_cbb_SelectedIndexChanged(object sender, EventArgs e)
         {
+            var db = new ConnectDataContext();
+            // Lấy ngày nhỏ nhất
+            var minDate = new[] {
+            db.Bills.Min(b => b.BillDate),
+            db.Bill_SellProducts.Min(sp => sp.BillDate)
+            }.Min();
+
+            // Lấy ngày lớn nhất
+            var maxDate = new[] {
+            db.Bills.Max(b => b.BillDate),
+            db.Bill_SellProducts.Max(sp => sp.BillDate)
+            }.Max();
             string selected = chuki_cbb.SelectedItem.ToString();
-
-            bool isCustom = !(selected == "Theo tháng" || selected == "Theo năm");
-            Tungay_label.Visible = isCustom;
-            Denngay_label.Visible = isCustom;
-            startDay_date.Visible = isCustom;
-            endDay_date.Visible = isCustom;
-            thoidiem_cbb.Visible = !isCustom;
-            thoidiem_label.Visible = !isCustom;
-
-            thoidiem_cbb.Items.Clear();
-
-            if (selected == "Theo tháng")
+            if(selected =="Toàn bộ")
             {
-                int currentMonth = DateTime.Now.Month;
-                int currentYear = DateTime.Now.Year;
-                for (int i = 1; i <= currentMonth; i++)
-                {
-                    thoidiem_cbb.Items.Add($"Tháng {i} - {currentYear}");
-                }
+                Tungay_label.Visible = false;
+                Denngay_label.Visible = false;
+                startDay_date.Visible = false;
+                endDay_date.Visible = false;
+                thoidiem_cbb.Visible = false;
+                thoidiem_label.Visible = false;
+                VeBieuDo_Tongquat(minDate, maxDate);
+
             }
-            else if (selected == "Theo năm")
+            else
             {
-                int currentYear = DateTime.Now.Year;
-                for (int i = currentYear - 5; i <= currentYear; i++) // 5 năm gần đây
+                bool isCustom = !(selected == "Theo tháng" || selected == "Theo năm");
+                Tungay_label.Visible = isCustom;
+                Denngay_label.Visible = isCustom;
+                startDay_date.Visible = isCustom;
+                endDay_date.Visible = isCustom;
+                thoidiem_cbb.Visible = !isCustom;
+                thoidiem_label.Visible = !isCustom;
+
+                thoidiem_cbb.Items.Clear();
+
+
+                if (selected == "Theo tháng")
                 {
-                    thoidiem_cbb.Items.Add(i.ToString());
+                    int minMonth = minDate.Month;
+                    int minYear = minDate.Year;
+                    int currentMonth = DateTime.Now.Month;
+                    int currentYear = DateTime.Now.Year;
+
+                    // Duyệt qua các năm từ minYear đến currentYear
+                    for (int year = minYear; year <= currentYear; year++)
+                    {
+                        int startMonth = (year == minYear) ? minMonth : 1; // Bắt đầu từ minMonth nếu là minYear
+                        int endMonth = (year == currentYear) ? currentMonth : 12; // Kết thúc ở currentMonth nếu là currentYear
+
+                        for (int month = startMonth; month <= endMonth; month++)
+                        {
+                            thoidiem_cbb.Items.Add($"Tháng {month} - {year}");
+                        }
+                    }
                 }
-            }
+                else if (selected == "Theo năm")
+                {
+                    int minYear = minDate.Year;
+                    int currentYear = DateTime.Now.Year;
 
-
-
-            if (thoidiem_cbb.Items.Count > 0)
-            {
-                thoidiem_cbb.SelectedIndex = 0; // chọn mặc định
+                    for (int year = minYear; year <= currentYear; year++)
+                    {
+                        thoidiem_cbb.Items.Add(year.ToString());
+                    }
+                }
+                if (thoidiem_cbb.Items.Count > 0)
+                {
+                    thoidiem_cbb.SelectedIndex = 0; // chọn mặc định
+                }
             }
         }
 
