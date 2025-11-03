@@ -1,3 +1,5 @@
+<div align="center">
+
 # StarCinema - Hệ Thống Quản Lý Rạp Chiếu Phim
 
 ![.NET Framework](https://img.shields.io/badge/.NET%20Framework-4.7.2-512BD4?style=flat-square&logo=.net)
@@ -5,6 +7,8 @@
 ![Windows Forms](https://img.shields.io/badge/Windows%20Forms-0078D6?style=flat-square&logo=windows&logoColor=white)
 ![SQL Server](https://img.shields.io/badge/SQL%20Server-CC2927?style=flat-square&logo=microsoft-sql-server&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
+
+</div>
 
 ## Giới Thiệu
 
